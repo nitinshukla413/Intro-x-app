@@ -107,7 +107,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex max-md:flex-wrap w-full justify-center items-center p-20 max-lg:p-10 max-md:p-10">
+        <div className="flex max-md:flex-wrap w-full justify-center items-center p-10 max-lg:p-10 max-md:p-10">
           <Image src={MasterCard} alt="payment options" className="mr-5 mt-5" />
           <Image src={Visa} alt="payment options" className="mr-5 mt-5" />
           <Image src={American} alt="payment options" className="mr-5 mt-5" />

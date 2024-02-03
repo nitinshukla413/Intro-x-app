@@ -7,17 +7,22 @@ import Fav from "../../../public/assets/images/fav.svg";
 import Bell from "../../../public/assets/images/bell-dark.svg";
 import mail from "../../../public/assets/images/mail-dark.svg";
 import plus from "../../../public/assets/images/add-light.svg";
-import { IconButton, InputBase, Paper } from "@mui/material";
+import { Button, IconButton, InputBase, Paper } from "@mui/material";
 const AppBar = () => {
   return (
-    <div className="flex justify-between px-10 py-4 items-center bg-[#F5F5F5]">
+    <div className="flex justify-between px-10 py-4 max-md:px-5 items-center bg-[#F5F5F5]">
       <div className="flex justify-start items-center">
-        <div className="p-3 bg-white cursor-pointer shadow-3xl shadow-black rounded-3xl">
+        <IconButton
+          sx={{ p: "15px", mx: "10px" }}
+          type="button"
+          aria-label="search"
+          className="bg-white shadow-2xl"
+        >
           <Image src={HamBurger} alt="hm" className="h-5 w-5" />
-        </div>
-        <Image src={Logo} className="ml-3 h-full" alt="hm" />
+        </IconButton>
+        <Image src={Logo} className="ml-3 h-full max-md:ml-0" alt="hm" />
       </div>
-      <div className="bg-white w-1/2 focus:outline-1 rounded-lg shadow-lg flex justify-between items-center">
+      <div className="max-md:hidden bg-white w-1/2 focus:outline-1 rounded-lg shadow-lg flex justify-between items-center">
         <IconButton sx={{ p: "15px", ml: "4px" }} aria-label="menu">
           <Image src={Search} alt="search" />
         </IconButton>
@@ -33,22 +38,35 @@ const AppBar = () => {
           <Image src={Filter} alt="search" />
         </IconButton>
       </div>
-      <div className="flex space-x-5">
-        <div className="p-3 bg-white  flex justify-center items-center cursor-pointer shadow-3xl shadow-black rounded-3xl">
+      <div className="flex max-md:hidden max-lg:hidden space-x-3">
+        <IconButton
+          sx={{ p: "15px" }}
+          type="button"
+          aria-label="search"
+          className="bg-white shadow-2xl"
+        >
           <Image src={Fav} alt="hm" className="h-5 w-5" />
-        </div>
-        <div className="p-3 bg-white flex justify-center items-center cursor-pointer shadow-3xl shadow-black rounded-3xl">
+        </IconButton>
+        <IconButton
+          sx={{ p: "15px" }}
+          type="button"
+          aria-label="search"
+          className="bg-white shadow-2xl"
+        >
           <Image src={mail} alt="hm" className="h-5 w-5" />
-        </div>
-        <div className="p-3 bg-white flex justify-center items-center  cursor-pointer shadow-3xl shadow-black rounded-3xl">
+        </IconButton>
+        <IconButton
+          sx={{ p: "15px" }}
+          type="button"
+          aria-label="search"
+          className="bg-white shadow-2xl"
+        >
           <Image src={Bell} alt="hm" className="h-5 w-5" />
-        </div>
-        <div className="flex px-3 py-2 cursor-pointer rounded-lg justify-center items-center bg-[#0044BB] ">
-          <Image src={plus} className="-mr-1 mt-1" alt="" />
-          <h4 className="text-md wider uppercase text-white font-extrabold">
-            Become a Seller
-          </h4>
-        </div>
+        </IconButton>
+        <Button variant="contained" className=" bg-[#0044BB] rounded-lg">
+          <Image src={plus} className="h-10 w-10 -mb-[5px] -mr-1" alt="" />
+          Become a Seller
+        </Button>
       </div>
     </div>
   );
