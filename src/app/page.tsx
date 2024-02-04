@@ -15,6 +15,7 @@ import ratnigir from "../../public/assets/images/ratnagiri.png";
 import latur from "../../public/assets/images/Latur.png";
 import mumbai from "../../public/assets/images/mumbai.png";
 import SearchBox from "@/components/search";
+import Wrapper from "@/components/wrapper";
 export default function Home() {
   return (
     <div className="flex flex-col justify-start items-center">
@@ -23,14 +24,16 @@ export default function Home() {
         <TypesSection />
       </div>
       <SectionFeature />
-      <ProductGrid
-        title={"Top"}
-        highlightTitle="Listing"
-        afterhighlight="Near You"
-      />
-      <ProductGrid title={"Top"} highlightTitle="Products" />
-      <ProductGrid title={"Browse Our Top"} highlightTitle="Categories" />
-      <LocationSection />
+      <Wrapper>
+        <ProductGrid
+          title={"Top"}
+          highlightTitle="Listing"
+          afterhighlight="Near You"
+        />
+        <ProductGrid title={"Top"} highlightTitle="Products" />
+        <ProductGrid title={"Browse Our Top"} highlightTitle="Categories" />
+        <LocationSection />
+      </Wrapper>
     </div>
   );
 }
@@ -51,20 +54,18 @@ export const LocationSection = () => {
     { img: latur, w: "20%" },
   ];
   return (
-    <div className="p-10 max-md:p-5">
-      <div className="flex flex-col max-md:px-0 px-20">
-        <h3 className="text-3xl max-md:text-2xl text-black font-[500] mb-10 max-md:mb-5">
-          Products By Top <span className="text-[#0344B6]">Cities</span>
-        </h3>
-        <div className="flex flex-wrap justify-center items-center">
-          {images?.map((elem, i) => (
-            <Image
-              src={elem.img}
-              className={`hover:scale-105 h-[25vh] object-fill delay-3000 cursor-pointer w-[${elem.w}] max-md:w-[100%] max-md:mr-0 max-md:mb-5 mr-10 mb-10`}
-              alt={"city"}
-            />
-          ))}
-        </div>
+    <div className="flex flex-col">
+      <h3 className="text-3xl max-md:text-2xl text-black font-[500] mb-10 max-md:mb-5">
+        Products By Top <span className="text-[#0344B6]">Cities</span>
+      </h3>
+      <div className="flex flex-wrap justify-center items-center">
+        {images?.map((elem, i) => (
+          <Image
+            src={elem.img}
+            className={`hover:scale-105 h-[25vh] max-lg:h-[20vh] object-fill delay-3000 cursor-pointer w-[${elem.w}] max-lg:w-[30%] max-md:w-[100%] max-md:mr-0 max-md:mb-5 mr-10 mb-10`}
+            alt={"city"}
+          />
+        ))}
       </div>
     </div>
   );
@@ -87,8 +88,8 @@ export const TypesSection = () => {
                 : ""
             }`}
           >
-            <Image src={elem.img} alt="ship" />
-            <h3 className="text-lg font-[500] text-black mt-2">{elem.title}</h3>
+            <Image src={elem.img} alt="ship" className="max-lg:w-10 max-lg:h-10" />
+            <h3 className="text-lg max-lg:text-sm font-[500] text-black mt-2">{elem.title}</h3>
           </div>
         ))}
       </div>
@@ -109,10 +110,10 @@ export const SectionFeature = () => {
           <div className="flex flex-col justify-center items-center">
             <Image
               src={elem.img}
-              className="max-md:h-10 max-md:w-10"
+              className="max-md:h-10 max-md:w-10 max-lg:w-10 max-lg:h-10"
               alt="ship"
             />
-            <h3 className="text-lg  max-md:text-sm font-[500] text-white mt-2">
+            <h3 className="text-lg max-lg:text-sm  max-md:text-sm font-[500] text-white mt-2">
               {elem.title}
             </h3>
           </div>
