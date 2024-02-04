@@ -33,7 +33,7 @@ const Footer = () => {
         <div className="flex justify-center space-x-10 max-md:flex-wrap max-md:space-x-0 items-start w-full border-b border-b-[#333333]">
           <div className="flex pb-10  flex-col space-y-5 justify-center items-start max-md:w-full w-[25%]">
             <div className="border-b py-5 border-b-[#333333] w-full">
-              <h2 className="text-2xl   text-[#BBBBBB]">Contact US</h2>
+              <h2 className="text-xl  text-[#BBBBBB]">Contact US</h2>
               <div className="h-[2px] relative top-5 w-[30%] bg-[#0044BB]"></div>
             </div>
             <div className="flex px-2 flex-col space-y-5 justify-center items-start">
@@ -59,7 +59,7 @@ const Footer = () => {
           </div>
           <div className="flex pb-10 flex-col space-y-5 justify-center items-start max-md:w-full w-[25%]">
             <div className="border-b py-5  border-b-[#333333] w-full">
-              <h2 className="text-2xl text-[#BBBBBB]">Quick Links</h2>
+              <h2 className="text-xl text-[#BBBBBB]">Quick Links</h2>
               <div className="h-[2px] relative top-5 w-[30%] bg-[#0044BB]"></div>
             </div>
             <div className="flex px-2 flex-col space-y-5 justify-center items-start">
@@ -77,7 +77,7 @@ const Footer = () => {
           </div>
           <div className="flex pb-10 flex-col space-y-5 justify-center items-start max-md:w-full w-[25%]">
             <div className="border-b py-5  border-b-[#333333] w-full">
-              <h2 className="text-2xl text-[#BBBBBB]">Information</h2>
+              <h2 className="text-xl text-[#BBBBBB]">Information</h2>
               <div className="h-[2px] relative top-5 w-[30%] bg-[#0044BB]"></div>
             </div>
             <div className="flex px-2 flex-col space-y-5 justify-center items-start">
