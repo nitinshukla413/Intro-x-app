@@ -21,12 +21,12 @@ const ProductCard = ({
   Blocation: string;
 }) => {
   return (
-    <div className="delay-3000 cursor-pointer hover:scale-105 flex mr-8 mb-5 justify-start items-center border-[1px] rounded-lg bg-[#F5F5F5] border-[#c3c3c4]">
-      <div className="h-full ">
+    <div className="delay-3000 max-md:mr-0 cursor-pointer hover:scale-105 flex mr-8 mb-5 justify-start items-center border-[1px] rounded-lg bg-[#F5F5F5] border-[#c3c3c4]">
+      <div className="h-full w-1/2">
         {/* <h3 className="w-fit px-5 rounded-md relative top-30 right-0 bg-[#DC3545] text-white font-extrabold text-md">
           {tag || "Plot"}
         </h3> */}
-        <Image src={image || TempImg} className="h-full rounded-l-lg" alt="" />
+        <Image src={image || TempImg} className="h-full object-cover max-md:rounded-l-none max-md:rounded-t-lg rounded-l-lg" alt="" />
       </div>
       <div className="flex space-y-2 flex-col h-full p-3 text-[#777777] justify-start items-start">
         <h3 className="text-md w-full font-[500] wider text-[#777777]">

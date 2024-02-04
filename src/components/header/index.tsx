@@ -40,7 +40,8 @@ const AppBar = () => {
           </IconButton>
           <Image src={Logo} className="ml-3 h-full max-md:ml-0" alt="hm" />
         </div>
-        <SearchBox />
+        <SearchBox hideOnMobile/>
+
         <div className="flex max-md:hidden max-lg:hidden space-x-3">
           <IconButton
             sx={{ p: "15px" }}
