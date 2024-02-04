@@ -42,8 +42,8 @@ const ProductGrid = ({
           <Image src={Arrow} className="h-5 w-4 ml-3 mt-1" alt="<" />
         </div>
       </div>
-      <div className="flex flex-col items-center max-md:mt-5 justify-center">
-        <div className="flex max-md:flex-wrap justify-start items-center">
+      <div className="flex flex-col items-center max-md:mt-5 justify-center ">
+        <div className="flex max-md:flex-wrap  max-lg:flex-wrap max-lg:space-x-0 max-lg:justify-center max-lg:space-y-10 justify-start space-x-10 max-md:justify-center max-md:space-y-10 max-md:space-x-0 items-center">
           <ProductCard />
           <ProductCard />
           <ProductCard />
