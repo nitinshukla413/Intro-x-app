@@ -330,8 +330,6 @@ const Step5Form = () => {
             // value={formData.website}
             // onChange={handleChange}
           />
-
-         
         </div>
       </div>
     </Typography>
@@ -339,10 +337,6 @@ const Step5Form = () => {
 };
 const Step6Form = () => {
   // Implement your form logic for step 3
-  return (
-    <Typography>
-     Thank you
-    </Typography>
-  );
+  return <Typography>Thank you</Typography>;
 };
 export default BusinessProfile;
