@@ -3,21 +3,26 @@ import { Button } from "@mui/material";
 const PrimaryBtn = ({
   title,
   handleClick,
-  tailingIcon=null,
-  containerStyle=''
+  tailingIcon = null,
+  containerStyle = "",
+  disable = false,
 }: {
   title: string;
-  containerStyle?:string,
-  tailingIcon?:any,
+  containerStyle?: string;
+  tailingIcon?: any;
   handleClick: () => void;
+  disable?: boolean;
 }) => {
- return <Button
-    variant="contained"
-    onClick={handleClick}
-    className={`bg-[#0044BB] rounded-lg p-3 ${containerStyle}`}
-  >
-    {tailingIcon}
-    {title}
-  </Button>;
+  return (
+    <Button
+      disabled={disable}
+      variant="contained"
+      onClick={handleClick}
+      className={`bg-[#0044BB] rounded-lg p-3 ${containerStyle}`}
+    >
+      {tailingIcon}
+      {title}
+    </Button>
+  );
 };
 export default PrimaryBtn;

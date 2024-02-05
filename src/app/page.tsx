@@ -16,9 +16,11 @@ import latur from "../../public/assets/images/Latur.png";
 import mumbai from "../../public/assets/images/mumbai.png";
 import SearchBox from "@/components/search";
 import Wrapper from "@/components/wrapper";
+import SimpleSlider from "@/components/slider";
 export default function Home() {
   return (
     <div className="flex flex-col justify-start items-center">
+      
       <BannerSection />
       <div className="relative -top-10 w-full">
         <TypesSection />
