@@ -2,8 +2,6 @@
 "use client";
 import { useState } from "react";
 import {
-  Button,
-  Container,
   FormControl,
   InputLabel,
   LinearProgress,
@@ -16,11 +14,6 @@ import { useRouter } from "next/navigation";
 import HeaderBand from "@/components/header-band";
 import Wrapper from "@/components/wrapper";
 import PrimaryBtn from "@/components/buttons/primary";
-import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { Label } from "@mui/icons-material";
 import img from "../../../public/assets/images/tick-animation-blue-success-feedback-plX7vWp4dQ.png";
 import Image from "next/image";
 const steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];

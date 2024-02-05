@@ -1,26 +1,11 @@
 // pages/login.js
 "use client";
 import { useState } from "react";
-import {
-  Button,
-  Container,
-  FormControl,
-  InputLabel,
-  LinearProgress,
-  MenuItem,
-  Select,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { LinearProgress } from "@mui/material";
 import { useRouter } from "next/navigation";
 import HeaderBand from "@/components/header-band";
 import Wrapper from "@/components/wrapper";
 import PrimaryBtn from "@/components/buttons/primary";
-import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { Label } from "@mui/icons-material";
 import img from "../../../public/assets/images/tick-animation-blue-success-feedback-plX7vWp4dQ.png";
 import Image from "next/image";
 import { getInputText, typeOfData } from "../business-profile/page";
@@ -110,9 +95,9 @@ const AddProduct = () => {
       <HeaderBand
         title={activeStep < 2 ? "Profile" : "Bussiness Profile"}
       ></HeaderBand>
-      <Wrapper>
-        <div className="flex justify-center items-center mt-20 mb-20">
-          <div className=" flex-col w-[80%] h-[70vh]  mt-20 mb-20 max-md:mt-10 flex justify-center items-start">
+      <Wrapper >
+        <div className="flex justify-center px-10  items-center ">
+          <div className=" flex-col w-full h-[70vh] mt-20 mb-20 max-md:mt-10 flex justify-center items-start">
             <div className="w-full flex flex-col justify-end items-end">
               <p className="text-md text-[#D9D9D9] font-bold">
                 {progressPercentage}%
@@ -133,7 +118,7 @@ const AddProduct = () => {
             <h2 className="text-xl max-md:text-lg text-black wider uppercase font-[600]">
               Product <span className="text-[#0044BB]"> information</span>
             </h2>
-            <div className="w-full p-8 my-5 max-md:pt-5 px-10 min-h-[50vh] flex justify-start items-start rounded-xl border-2 border-[#DDDDDD] bg-[#FAFAFA]">
+            <div className="w-full p-8 my-5 max-md:pt-5 px-10 min-h-[50vh] max-md:min-h-[60vh]  flex justify-start items-start rounded-xl border-2 border-[#DDDDDD] bg-[#FAFAFA]">
               {getForm(activeStep)}
             </div>
             {activeStep !== steps.length && (
@@ -256,23 +241,21 @@ const Step2Form = ({
         field1({
           className: "w-[45%] max-md:w-full mr-5 max-md:mr-0 mb-10  ",
         })}
-     {field2 &&
+      {field2 &&
         field2({
           className: "w-[45%] max-md:w-full mr-5 max-md:mr-0 mb-10 ",
         })}
- 
-     
+
       {field3 &&
         field3({
           className: "w-[50%] max-md:w-full  max-md:mr-0 mb-10 ",
         })}
-         {field4 &&
+      {field4 &&
         field4({
           className:
             "w-[50%] flex justify-center items-start max-md:w-full max-md:mr-0 mb-10 ",
         })}
     </div>
-
   );
 };
 

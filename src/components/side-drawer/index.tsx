@@ -14,6 +14,7 @@ import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import TabNavigator from "../tab";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Drawer = ({
   openDrawer,
@@ -24,6 +25,8 @@ const Drawer = ({
   openDrawer: boolean;
   toggleDrawer: () => void;
 }) => {
+  const router = useRouter();
+
   const getTabContent = (id: number) => {
     switch (id) {
       case 0:
@@ -108,7 +111,10 @@ const Drawer = ({
           <h3 className="text-xl font-bold wider py-5">{title}</h3>
           <PrimaryBtn
             title={"Add a Product"}
-            handleClick={() => {}}
+            handleClick={() => {
+              router.push("/add-product");
+              toggleDrawer()
+            }}
             tailingIcon={
               <Image src={plus} className="h-8 w-8 -mb-[5px] -mr-1" alt="" />
             }
