@@ -24,7 +24,7 @@ import { Label } from "@mui/icons-material";
 import img from "../../../public/assets/images/tick-animation-blue-success-feedback-plX7vWp4dQ.png";
 import Image from "next/image";
 const steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];
-const typeOfData = {
+export const typeOfData = {
   text: "text",
   dob: "dob",
   email: "email",
@@ -33,7 +33,7 @@ const typeOfData = {
   select: "select",
 };
 
-const getInputText = ({
+export const getInputText = ({
   id,
   val,
   handleChange,
