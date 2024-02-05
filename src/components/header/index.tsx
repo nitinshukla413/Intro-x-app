@@ -2,15 +2,15 @@
 import Image from "next/image";
 import HamBurger from "../../../public/assets/images/sidebar.svg";
 import Logo from "../../../public/assets/images/introapp-dark.svg";
-
 import Fav from "../../../public/assets/images/fav.svg";
 import Bell from "../../../public/assets/images/bell-dark.svg";
 import mail from "../../../public/assets/images/mail-dark.svg";
 import plus from "../../../public/assets/images/add-light.svg";
-import { Button, IconButton, SwipeableDrawer } from "@mui/material";
 import { useState } from "react";
 import SearchBox from "../search";
 import PrimaryBtn from "../buttons/primary";
+import Drawer from "../side-drawer";
+import { IconButton } from "@mui/material";
 
 const AppBar = () => {
   const [openDrawer, setDrawer] = useState(false);
@@ -20,14 +20,7 @@ const AppBar = () => {
   return (
     <>
       <div className="flex justify-between px-10 py-4 max-md:px-5 items-center bg-[#F5F5F5]">
-        <SwipeableDrawer
-          anchor={"right"}
-          open={openDrawer}
-          onClose={toggleDrawer}
-          onOpen={toggleDrawer}
-        >
-          <div className="bg-white h-full w-[30vw]"></div>
-        </SwipeableDrawer>
+       <Drawer title={'Sahil Jain'} openDrawer={openDrawer} toggleDrawer={toggleDrawer}/>
         <div className="flex justify-start items-center">
           <IconButton
             sx={{ p: "15px", mx: "10px" }}
@@ -41,7 +34,6 @@ const AppBar = () => {
           <Image src={Logo} className="ml-3 h-full max-md:ml-0" alt="hm" />
         </div>
         <SearchBox hideOnMobile/>
-
         <div className="flex max-md:hidden max-lg:hidden space-x-3">
           <IconButton
             sx={{ p: "15px" }}
