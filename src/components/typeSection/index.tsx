@@ -1,8 +1,8 @@
 import Image from "next/image";
-import plants from "../../../public/assets/images/icons8-machinery 1.png";
-import plots from "../../../public/assets/images/icons8-country 1.png";
-import product from "../../../public/assets/images/icons8-box 1.png";
-import computer from "../../../public/assets/images/icons8-computer-chat 2.png";
+import product from "../../../public/assets/images/icons8-box.gif";
+import plots from "../../../public/assets/images/icons8-country.gif";
+import plants from "../../../public/assets/images/icons8-gears.gif";
+import computer from "../../../public/assets/images/icons8-computer-chat.gif";
 export const TypesSection = () => {
   const features = [
     { title: "Plants & Machinery", img: plants },
