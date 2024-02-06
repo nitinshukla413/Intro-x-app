@@ -42,6 +42,7 @@ const TabNavigator = ({
                 : ""),
             }}
             className="flex-[0.5] p-5"
+            key={i}
           />
         ))}
       </Tabs>

@@ -41,53 +41,62 @@ export const getInputText = ({
   menuList?: any;
   handleChange: (val: any) => void;
 }) => {
+  // Define inner functional components
+  const TextComponent = (props: any) => (
+    <TextField
+      {...props}
+      id="standard-basic"
+      label={label}
+      variant="standard"
+      placeholder={placeholder}
+      type={id}
+      onChange={handleChange}
+      value={val}
+    />
+  );
+
+  const SelectComponent = (props: any) => (
+    <FormControl {...props} size="small">
+      <InputLabel id="demo-select-small-label">{label}</InputLabel>
+      <Select
+        {...props}
+        labelId="demo-select-small-label"
+        id="demo-select-small"
+        value={val}
+        label={label}
+        onChange={handleChange}
+      >
+        {menuList?.map((elem: string, i: number) => (
+          <MenuItem value={i} key={i}>{elem}</MenuItem>
+        ))}
+      </Select>
+    </FormControl>
+  );
+
+  const FileComponent = (props: any) => (
+    <div className="flex flex-col justify-start ">
+      <h2 className="text-[#787878] mb-2">{label}</h2>
+      <TextField type="file" className="border-none" {...props} />
+    </div>
+  );
+
+  // Switch statement to return the appropriate component
   switch (id) {
     case typeOfData.dob:
     case typeOfData.text:
     case typeOfData.number:
     case typeOfData.email:
-      return (props: any) => (
-        <TextField
-          {...props}
-          id="standard-basic"
-          label={label}
-          variant="standard"
-          placeholder={placeholder}
-          type={id}
-          onChange={handleChange}
-          value={val}
-        />
-      );
+      return TextComponent;
     case typeOfData.select:
-      return (props: any) => (
-        <FormControl {...props} size="small">
-          <InputLabel id="demo-select-small-label">{label}</InputLabel>
-          <Select
-            {...props}
-            labelId="demo-select-small-label"
-            id="demo-select-small"
-            value={val}
-            label={label}
-            onChange={handleChange}
-          >
-            {menuList?.map((elem: string, i: number) => (
-              <MenuItem value={i}>{elem}</MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      );
+      return SelectComponent;
     case typeOfData.file:
-      return (props: any) => (
-        <div className="flex flex-col justify-start ">
-          <h2 className="text-[#787878] mb-2">{label}</h2>
-
-          <TextField type="file" className="border-none" {...props} />
-        </div>
-      );
+      return FileComponent;
     default:
       break;
   }
 };
+
+
 const BusinessProfile = () => {
   const router = useRouter();
   const [activeStep, setActiveStep] = useState(0);
@@ -309,7 +318,7 @@ const Step1Form = ({
     val: data.dob,
     label: "Date of birth",
     placeholder: "DD/MM/YYYY",
-    handleChange: (event: string) => {
+    handleChange: (event: any) => {
       handleChange({ dob: event.target.value });
     },
   });
@@ -496,7 +505,7 @@ const Step3Form = ({
     val: data.gBussurl,
     label: "Google Business URL",
     placeholder: "Google Business URL",
-    handleChange: (event: string) => {
+    handleChange: (event: any) => {
       handleChange({ gBussurl: event.target.value });
     },
   });
@@ -505,7 +514,7 @@ const Step3Form = ({
     val: data.empyNo,
     label: "No. Of Employees",
     placeholder: "No. Of Employees",
-    handleChange: (event: string) => {
+    handleChange: (event: any) => {
       handleChange({ empyNo: event.target.value });
     },
   });
@@ -514,7 +523,7 @@ const Step3Form = ({
     val: data.yearOfEst,
     label: "Year Of Establish",
     placeholder: "Year Of Establish",
-    handleChange: (event: string) => {
+    handleChange: (event: any) => {
       handleChange({ yearOfEst: event.target.value });
     },
   });
@@ -588,7 +597,7 @@ const Step4Form = ({
     val: data.ifscCode,
     label: "Bank IFSC Code",
     placeholder: "Bank IFSC Code",
-    handleChange: (event: string) => {
+    handleChange: (event: any) => {
       handleChange({ ifscCode: event.target.value });
     },
   });
@@ -597,7 +606,7 @@ const Step4Form = ({
     val: data.branch,
     label: "Bank Branch",
     placeholder: "Bank Branch",
-    handleChange: (event: string) => {
+    handleChange: (event: any) => {
       handleChange({ branch: event.target.value });
     },
   });
@@ -660,7 +669,7 @@ const Step5Form = ({
     val: data.businessProffDocument,
     label: "business Proof Document",
     placeholder: "Choose File",
-    handleChange: (event: string) => {
+    handleChange: (event: any) => {
       handleChange({ businessProffDocument: event.target.value });
     },
   });

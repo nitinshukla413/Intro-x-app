@@ -13,7 +13,7 @@ const Leads = () => {
         data-aos="fade-up"
         data-aos-duration="1000" className="flex flex-wrap my-20 justify-center items-center">
         {[...Array(numberOfCards)].map((_, index) => (
-            <LeadCard />
+            <LeadCard key={index}/>
         ))}
       </div>
     </div>

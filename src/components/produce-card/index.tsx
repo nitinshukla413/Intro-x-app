@@ -14,13 +14,13 @@ const ProductCard = ({
   Blocation,
   mobileView = false,
 }: {
-  image: string;
-  tag: string;
-  title: string;
+  image?: string;
+  tag?: string;
+  title?: string;
+  price?: string;
+  Bname?: string;
+  Blocation?: string;
   mobileView?: boolean;
-  price: string;
-  Bname: string;
-  Blocation: string;
 }) => {
   return (
     <div

@@ -36,8 +36,8 @@ const Dashboard = () => {
   const Products = ({ productList }: { productList: any[] }) => {
     return (
       <div className="flex flex-wrap ">
-        {["ad", "ad", "ad", "ad", "ad", "ad", "ad", "ad", "ad"]?.map((elem) => (
-          <ProductCard mobileView></ProductCard>
+        {["ad", "ad", "ad", "ad", "ad", "ad", "ad", "ad", "ad"]?.map((elem,i) => (
+          <ProductCard mobileView key={i} ></ProductCard>
         ))}
       </div>
     );

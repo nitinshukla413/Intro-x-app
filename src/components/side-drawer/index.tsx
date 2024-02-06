@@ -33,9 +33,10 @@ const Drawer = ({
       case 0:
         return (
           <div className="flex flex-col w-full justify-start item-center">
-            {mainMenu.map((elem) => (
+            {mainMenu.map((elem,i) => (
               <Link
                 href="/"
+                key={i}
                 className={`p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e] ${elem?.link===pathName?'bg-[#dedede4e] ':''}`}
                 >
                 Home
@@ -46,9 +47,10 @@ const Drawer = ({
       case 1:
         return (
           <div className="flex flex-col w-full justify-start item-center">
-            {selectMenu.map((elem: any) => (
+            {selectMenu.map((elem: any,i) => (
               <Link
                 href={elem?.link||'/'}
+                key={i}
                 className={`p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e] ${elem?.link===pathName?'bg-[#dedede4e] ':''}`}
               >
                 {elem?.title}

@@ -62,6 +62,7 @@ const Footer = () => {
                 return (
                   <Link
                     href={elem.link}
+                    key={elem.link}
                     className="text-lg cursor-pointer hover:text-[#0044BB] text-[#777777]"
                   >
                     {elem.title}
@@ -79,6 +80,7 @@ const Footer = () => {
               {information.map((elem) => {
                 return (
                   <Link
+                    key={elem.link}
                     href={elem?.link || "/"}
                     className="text-lg cursor-pointer hover:text-[#0044BB] text-[#777777]"
                   >

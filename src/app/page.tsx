@@ -74,6 +74,7 @@ export const LocationSection = () => {
             src={elem.img}
             className={`hover:scale-105 h-[25vh] max-lg:h-[20vh] object-fill delay-3000 cursor-pointer w-[${elem.w}] max-lg:w-[30%] max-md:w-[100%] max-md:mr-0 max-md:mb-5 mr-10 mb-10`}
             alt={"city"}
+            key={i}
           />
         ))}
       </div>
@@ -92,6 +93,7 @@ export const TypesSection = () => {
       <div className="flex bg-white w-[60%] max-md:w-4/5 max-md:flex-col max-md:justify-center max-md:px-5 justify-evenly py-5 px-10 max-md:space-x-0 space-x-2 rounded-xl shadow-[2px_10px_32px_-15px_rgba(0,0,0,0.3)]">
         {features.map((elem, i) => (
           <div
+            key={i}
             className={`flex  flex-col w-[25%] max-md:w-full border-[#E8E8E8] justify-center items-center ${
               i !== features?.length - 1
                 ? " border-r-2 max-md:border-b-2 max-md:border-r-0 "
@@ -122,9 +124,9 @@ export const SectionFeature = () => {
   return (
     <div className="max-md:py-5 max-md:px-10 max-md:my-10 py-10 my-20 mt-10 px-40  bg-[#080229]  w-full">
       <div className=" flex justify-evenly max-md:space-y-5  items-center max-md:flex-col">
-        {features.map((elem) => (
+        {features.map((elem,i) => (
           <div  data-aos="fade-up"
-          data-aos-duration="300" className="flex flex-col justify-center items-center">
+          data-aos-duration="300" className="flex flex-col justify-center items-center" key={i}>
             <Image
               src={elem.img}
               className="max-md:h-10 max-md:w-10 max-lg:w-10 max-lg:h-10"
