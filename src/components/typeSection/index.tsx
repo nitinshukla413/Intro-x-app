@@ -1,8 +1,8 @@
 import Image from "next/image";
-import plants from "../../../public/assets/images/icons8-machinery 1.png";
-import plots from "../../../public/assets/images/icons8-country 1.png";
-import product from "../../../public/assets/images/icons8-box 1.png";
-import computer from "../../../public/assets/images/icons8-computer-chat 2.png";
+import product from "../../../public/assets/images/icons8-box.gif";
+import plots from "../../../public/assets/images/icons8-country.gif";
+import plants from "../../../public/assets/images/icons8-gears.gif";
+import computer from "../../../public/assets/images/icons8-computer-chat.gif";
 export const TypesSection = () => {
   const features = [
     { title: "Plants & Machinery", img: plants },
@@ -16,7 +16,7 @@ export const TypesSection = () => {
         {features.map((elem, i) => (
           <div
             key={i}
-            className={`flex  flex-col w-[25%] max-md:w-full border-[#E8E8E8] justify-center items-center ${
+            className={`flex  max-md:py-5 flex-col w-[25%] max-md:w-full border-[#E8E8E8] justify-center items-center ${
               i !== features?.length - 1
                 ? " border-r-2 max-md:border-b-2 max-md:border-r-0 "
                 : ""

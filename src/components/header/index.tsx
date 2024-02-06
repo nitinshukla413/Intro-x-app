@@ -2,20 +2,26 @@
 import Image from "next/image";
 import HamBurger from "../../../public/assets/images/sidebar.svg";
 import Logo from "../../../public/assets/images/introapp-dark.svg";
-import Fav from "../../../public/assets/images/fav.svg";
-import Bell from "../../../public/assets/images/bell-dark.svg";
+import Fav from "../../../public/assets/images/Star.svg";
+// import Bell from "../../../public/assets/images/bell-dark.svg";
 import mail from "../../../public/assets/images/mail-dark.svg";
 import plus from "../../../public/assets/images/add-light.svg";
 import { useEffect, useState } from "react";
 import SearchBox from "../search";
 import PrimaryBtn from "../buttons/primary";
 import Drawer from "../side-drawer";
-import { IconButton } from "@mui/material";
+import { Avatar, IconButton } from "@mui/material";
 import { useRouter } from "next/navigation";
+import {
+  Email,
+  NotificationAdd,
+  Notifications,
+  Star,
+} from "@mui/icons-material";
 
 const AppBar = () => {
   const [openDrawer, setDrawer] = useState(false);
-  const router=useRouter()
+  const router = useRouter();
   const toggleDrawer = () => {
     setDrawer((val) => !val);
   };
@@ -43,9 +49,14 @@ const AppBar = () => {
           >
             <Image src={HamBurger} alt="hm" className="h-5 w-5" />
           </IconButton>
-          <Image onClick={()=>{
-            router.push('/')
-          }} src={Logo} className="cursor-pointer ml-3 h-full max-md:ml-0" alt="hm" />
+          <Image
+            onClick={() => {
+              router.push("/");
+            }}
+            src={Logo}
+            className="cursor-pointer ml-3 h-full max-md:ml-0"
+            alt="hm"
+          />
         </div>
         <SearchBox hideOnMobile />
         <div
@@ -54,28 +65,31 @@ const AppBar = () => {
           className="flex max-md:hidden max-lg:hidden space-x-3"
         >
           <IconButton
-            sx={{ p: "15px" }}
+            onClick={toggleDrawer}
+            sx={{ p: "15px", mx: "10px" }}
             type="button"
             aria-label="search"
             className="bg-white shadow-2xl"
           >
-            <Image src={Fav} alt="hm" className="h-6 w-6" />
+            <Star style={{ fill: "#0444B6" }} />
           </IconButton>
           <IconButton
-            sx={{ p: "15px" }}
+            onClick={toggleDrawer}
+            sx={{ p: "15px", mx: "10px" }}
             type="button"
             aria-label="search"
             className="bg-white shadow-2xl"
           >
-            <Image src={mail} alt="hm" className="h-6 w-6" />
+            <Email style={{ fill: "#0444B6" }} />
           </IconButton>
           <IconButton
-            sx={{ p: "15px" }}
+            onClick={toggleDrawer}
+            sx={{ p: "15px", mx: "10px" }}
             type="button"
             aria-label="search"
             className="bg-white shadow-2xl"
           >
-            <Image src={Bell} alt="hm" className="h-6 w-6" />
+            <Notifications style={{ fill: "#0444B6" }} />
           </IconButton>
           <PrimaryBtn
             title={" Become a Seller"}

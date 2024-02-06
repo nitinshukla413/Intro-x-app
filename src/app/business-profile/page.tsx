@@ -1,10 +1,7 @@
 // pages/login.js
 "use client";
 import { useState } from "react";
-import {
-  LinearProgress,
-  Typography,
-} from "@mui/material";
+import { LinearProgress, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 import HeaderBand from "@/components/header-band";
 import Wrapper from "@/components/wrapper";
@@ -140,7 +137,7 @@ const BusinessProfile = () => {
       ></HeaderBand>
       <Wrapper>
         <div className="flex justify-center items-center mt-20 mb-20">
-          <div className=" flex-col w-[80%] h-[70vh]  mt-20 mb-20 max-md:mt-10 flex justify-center items-start">
+          <div className=" flex-col w-[80%] max-md:w-full h-auto max-md:h-auto max-lg:mt-20   mt-20 mb-20 max-md:mt-10 flex justify-center items-start">
             <div
               data-aos="fade-left"
               data-aos-duration="1000"
@@ -179,12 +176,12 @@ const BusinessProfile = () => {
             <div
               data-aos="flip-up"
               data-aos-duration="1000"
-              className="w-full p-8 my-5 max-md:pt-5 px-10 min-h-[50vh] flex justify-start items-start rounded-xl border-2 border-[#DDDDDD] bg-[#FAFAFA]"
+              className="w-full p-8 my-5 max-md:pt-5 px-10 min-h-[50vh]  flex justify-start items-start rounded-xl border-2 border-[#DDDDDD] bg-[#FAFAFA]"
             >
               {getForm(activeStep)}
             </div>
             {activeStep !== steps.length && (
-              <div className="flex item-center justify-between mt-4 w-full px-10">
+              <div className="flex item-center justify-between mt-4 w-full px-10 max-md;mt-2 max-md:px-2 max-lg:px-3">
                 <PrimaryBtn
                   handleClick={handleBack}
                   title="  Previous  "
@@ -240,13 +237,10 @@ const Step1Form = ({
     },
   });
   return (
-    <div className="flex flex-wrap  w-full justify-start items-center max-md:flex-col ">
-      {nameInput &&
-        nameInput({
-          className: "w-[45%] max-md:w-full  mr-5 max-md:mr-0 mb-20  ",
-        })}
-      {dobInput && dobInput({ className: "w-[45%] max-md:w-full mb-20 " })}
-      {mailInput && mailInput({ className: "w-[45%] max-md:w-full mb-20 " })}
+    <div className=" h-full w-full grid max-md:grid-cols-1 max-md:gap-x-0 max-md:gap-y-5 gap-y-5 gap-x-10 grid-cols-2">
+      {nameInput && nameInput({})}
+      {dobInput && dobInput({})}
+      {mailInput && mailInput({})}
     </div>
   );
 };
@@ -261,7 +255,7 @@ const Step2Form = ({
   const field1 = getInputText({
     id: typeOfData.text,
     label: "Company Name",
-    placeholder: "Company Name",
+    placeholder: "Number",
     val: data.companyName,
     handleChange: (event: any) => {
       handleChange({ companyName: event.target.value });
@@ -270,7 +264,7 @@ const Step2Form = ({
   const field2 = getInputText({
     id: typeOfData.text,
     label: "Owner Name",
-    placeholder: "Owner Name",
+    placeholder: "Branch",
     val: data.ownerName,
     handleChange: (event: any) => {
       handleChange({ ownerName: event.target.value });
@@ -279,7 +273,7 @@ const Step2Form = ({
   const field3 = getInputText({
     id: typeOfData.text,
     label: "Annual Turnover",
-    placeholder: "Annual Turnover",
+    placeholder: "Number",
     val: data.turnover,
     handleChange: (event: any) => {
       handleChange({ turnover: event.target.value });
@@ -288,7 +282,7 @@ const Step2Form = ({
   const field4 = getInputText({
     id: typeOfData.select,
     label: "Type of Business",
-    placeholder: "Type of Business",
+    placeholder: "Select",
     val: data.bussType,
     menuList: [
       "Properitary",
@@ -303,8 +297,8 @@ const Step2Form = ({
 
   const addressInput = getInputText({
     id: typeOfData.text,
-    label: "Address",
-    placeholder: "address (area and Street)",
+    label: "",
+    placeholder: "Address (area and Street)",
     val: data.address,
     handleChange: (event: any) => {
       handleChange({ address: event.target.value });
@@ -312,8 +306,8 @@ const Step2Form = ({
   });
   const city = getInputText({
     id: typeOfData.text,
-    label: "City",
-    placeholder: "city /town",
+    label: "",
+    placeholder: "City /Town",
     val: data.city,
     handleChange: (event: any) => {
       handleChange({ city: event.target.value });
@@ -321,7 +315,7 @@ const Step2Form = ({
   });
   const state = getInputText({
     id: typeOfData.select,
-    label: "State",
+    label: "Select ",
     placeholder: "State",
     val: data.state,
     menuList: ["MP", "Maharastra", "Tamil Nadu"],
@@ -331,7 +325,7 @@ const Step2Form = ({
   });
   const pin = getInputText({
     id: typeOfData.text,
-    label: "Pincode",
+    label: "",
     placeholder: "Pincode",
     val: data.pincode,
     handleChange: (event: any) => {
@@ -339,46 +333,20 @@ const Step2Form = ({
     },
   });
   return (
-    <div className="flex flex-wrap w-full justify-start items-center max-md:flex-col ">
-      {field1 &&
-        field1({
-          className: "w-[45%] max-md:w-full mr-5 max-md:mr-0  ",
-        })}
-      {field4 &&
-        field4({
-          className:
-            "w-[50%] flex ml-2 justify-center items-start max-md:w-full max-md:mr-0 mb-3 ",
-        })}
-      {field2 &&
-        field2({
-          className: "w-[45%] max-md:w-full mr-5 max-md:mr-0 mb-10 ",
-        })}
-
-      <div className="flex ml-3 flex-wrap w-[45%] max-md:w-full mr-5 max-md:mr-0 mb-10 ">
+    <div className=" h-full w-full grid max-md:grid-cols-1 max-md:gap-x-0 max-md:gap-y-5 gap-y-5 gap-x-10 grid-cols-2">
+      {field1 && field1({})}
+      {field4 && field4({})}
+      {field2 && field2({})}
+      <div className="grid grid-cols-1 gap-y-2 ">
         <h2 className="text-[#787878]">Company Adress</h2>
-        {addressInput &&
-          addressInput({
-            className: "w-[100%] max-md:w-full mr-5 max-md:mr-0 mb-5 ",
-          })}
-        {city &&
-          city({
-            className: "w-[30%] max-md:w-full mr-2",
-          })}
-        {state &&
-          state({
-            className:
-              "w-[60%] flex justify-center items-start max-md:w-full max-md:mr-0 mb-0  ",
-          })}
-        {pin &&
-          pin({
-            className:
-              "w-[30%] flex justify-center items-start max-md:w-full max-md:mr-0 mb-0  ",
-          })}
+        {addressInput && addressInput({})}
+        <div className="grid grid-cols-2 gap-y-2 gap-x-2 max-md:grid-cols-1 max-lg:grid-cols-1 max-md:gap-y-5">
+          {city && city({})}
+          {state && state({})}
+          {pin && pin({})}
+        </div>
       </div>
-      {field3 &&
-        field3({
-          className: "w-[45%] max-md:w-full mr-5 max-md:mr-0 mb-10 ",
-        })}
+      {field3 && field3({})}
     </div>
   );
 };
@@ -445,31 +413,13 @@ const Step3Form = ({
     },
   });
   return (
-    <div className="flex flex-wrap  w-full justify-start items-center max-md:flex-col ">
-      {field1 &&
-        field1({
-          className: "w-[45%] max-md:w-full  mr-5 max-md:mr-0 mb-20  ",
-        })}
-      {field2 &&
-        field2({
-          className: "w-[45%] max-md:w-full  mr-5 max-md:mr-0 mb-20   ",
-        })}
-      {field3 &&
-        field3({
-          className: "w-[45%] max-md:w-full  mr-5 max-md:mr-0 mb-20   ",
-        })}
-      {field4 &&
-        field4({
-          className: "w-[45%] max-md:w-full  mr-5 max-md:mr-0 mb-20   ",
-        })}
-      {field6 &&
-        field6({
-          className: "w-[45%] max-md:w-full  mr-5 max-md:mr-0 mb-20  ",
-        })}
-      {field5 &&
-        field5({
-          className: "w-[45%] max-md:w-full  mr-5 max-md:mr-0 mb-20  ",
-        })}
+    <div className=" h-full w-full grid max-md:grid-cols-1 max-md:gap-x-0 max-md:gap-y-5 gap-y-10 gap-x-10 grid-cols-2">
+      {field1 && field1({})}
+      {field2 && field2({})}
+      {field3 && field3({})}
+      {field4 && field4({})}
+      {field6 && field6({})}
+      {field5 && field5({})}
     </div>
   );
 };
@@ -529,27 +479,22 @@ const Step4Form = ({
   });
 
   return (
-    <div className="flex flex-wrap  w-full justify-start items-center max-md:flex-col ">
-      {field1 &&
+    <div className=" h-full w-full grid max-md:grid-cols-1 max-md:gap-x-0 max-md:gap-y-5 gap-y-10 gap-x-10 grid-cols-2">
+    {field1 &&
         field1({
-          className: "w-[45%] max-md:w-full  mr-5 max-md:mr-0 mb-20  ",
         })}
       {field2 &&
         field2({
-          className: "w-[45%] max-md:w-full  mr-5 max-md:mr-0 mb-20   ",
         })}
       {field6 &&
         field6({
-          className: "w-[45%] max-md:w-full  mr-5 max-md:mr-0 mb-5  ",
         })}
 
       {field3 &&
         field3({
-          className: "w-[45%] max-md:w-full  mr-5 max-md:mr-0 mb-20   ",
         })}
       {field4 &&
         field4({
-          className: "w-[45%] max-md:w-full  mr-5 max-md:mr-0 mb-20   ",
         })}
     </div>
   );

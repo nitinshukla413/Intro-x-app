@@ -1,8 +1,4 @@
 import {
-  Avatar,
-  Icon,
-  IconButton,
-  SwipeableDrawer,
   Tab,
   Tabs,
 } from "@mui/material";
@@ -28,6 +24,11 @@ const TabNavigator = ({
         className="w-full flex  justify-start border-b-2 "
         TabIndicatorProps={{
           style: { background: "#0444BB", height: "4px", color: "red" },
+        }}
+        sx={{
+          '& .MuiTabs-flexContainer': {
+            flexWrap: 'wrap',
+          },
         }}
       >
         {tabs?.map((elem: string, i: number) => (
