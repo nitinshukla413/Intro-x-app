@@ -44,7 +44,7 @@ const Drawer = ({
         return (
           <div className="flex flex-col w-full justify-start item-center">
             <Link
-              href="/dasboard"
+              href="/dashboard"
               className="p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e]"
             >
               Dashboard
