@@ -10,7 +10,7 @@ export default function Home() {
   const router = useRouter();
   return (
     <div className="flex flex-col justify-start items-center">
-      <div className="w-full bg-[#0044BB] h-[50vh] flex justify-center items-center">
+      <div className="w-full bg-[url('../../public/assets/images/banner.png')] bg-cover bg-no-repeat h-[50vh] flex justify-center items-center">
         <SearchBox />
       </div>
       <div
