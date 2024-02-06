@@ -14,6 +14,7 @@ import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import TabNavigator from "../tab";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Drawer = ({
   openDrawer,
@@ -24,6 +25,8 @@ const Drawer = ({
   openDrawer: boolean;
   toggleDrawer: () => void;
 }) => {
+  const router = useRouter();
+
   const getTabContent = (id: number) => {
     switch (id) {
       case 0:
@@ -41,25 +44,25 @@ const Drawer = ({
         return (
           <div className="flex flex-col w-full justify-start item-center">
             <Link
-              href="/dasboard"
+              href="/dashboard"
               className="p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e]"
             >
               Dashboard
             </Link>
             <Link
-              href="/"
+              href="/profile"
               className="p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e]"
             >
               Profile
             </Link>
             <Link
-              href="/"
+              href="/business-profile"
               className="p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e]"
             >
               Business Profile
             </Link>
             <Link
-              href="/"
+              href="/add-product"
               className="p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e]"
             >
               Add Product
@@ -108,7 +111,10 @@ const Drawer = ({
           <h3 className="text-xl font-bold wider py-5">{title}</h3>
           <PrimaryBtn
             title={"Add a Product"}
-            handleClick={() => {}}
+            handleClick={() => {
+              router.push("/add-product");
+              toggleDrawer()
+            }}
             tailingIcon={
               <Image src={plus} className="h-8 w-8 -mb-[5px] -mr-1" alt="" />
             }
