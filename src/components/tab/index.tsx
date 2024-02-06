@@ -1,8 +1,4 @@
 import {
-  Avatar,
-  Icon,
-  IconButton,
-  SwipeableDrawer,
   Tab,
   Tabs,
 } from "@mui/material";

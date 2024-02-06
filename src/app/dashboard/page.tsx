@@ -1,6 +1,5 @@
 "use client";
 import HeaderBand from "@/components/header-band";
-import { Avatar } from "@mui/material";
 import Phone from "../../../public/assets/images/phone.svg";
 import mail from "../../../public/assets/images/mail.svg";
 import location from "../../../public/assets/images/location.svg";
@@ -8,6 +7,8 @@ import Image from "next/image";
 import TabNavigator from "@/components/tab";
 import ProductCard from "@/components/produce-card";
 import Wrapper from "@/components/wrapper";
+import Avt from "../../../public/assets/images/Avatar.png";
+
 const Dashboard = () => {
   const Box = ({
     title,
@@ -36,9 +37,11 @@ const Dashboard = () => {
   const Products = ({ productList }: { productList: any[] }) => {
     return (
       <div className="flex flex-wrap ">
-        {["ad", "ad", "ad", "ad", "ad", "ad", "ad", "ad", "ad"]?.map((elem,i) => (
-          <ProductCard mobileView key={i} ></ProductCard>
-        ))}
+        {["ad", "ad", "ad", "ad", "ad", "ad", "ad", "ad", "ad"]?.map(
+          (elem, i) => (
+            <ProductCard mobileView key={i}></ProductCard>
+          )
+        )}
       </div>
     );
   };
@@ -54,12 +57,12 @@ const Dashboard = () => {
     <div className="flex flex-col justify-center items-center w-full">
       <HeaderBand title="Dashboard"></HeaderBand>
       <Wrapper>
-        <div  data-aos="fade-right" className="relative -top-10 w-full">
+        <div data-aos="fade-right" className="relative -top-10 w-full">
           <div className="flex justify-start p-5 px-5 rounded-2xl items-center shadow-[2px_10px_32px_-15px_rgba(0,0,0,0.3)] bg-white">
             <div className="flex border-2 items-center justify-start  border-[#7777] p-3 px-10 rounded-2xl">
-              <Avatar className=" bg-[#105BBE]  color-white font-bold h-[11vh] w-[6vw]">
-                SJ
-              </Avatar>
+              <div className=" bg-[#0444BB] rounded-[50%] flex justify-center items-center color-white font-bold h-40 w-40">
+                <Image src={Avt} alt="" className="w-[95%] h-[95%]" />
+              </div>
               <div className="flex flex-col pl-5 justify-start items-start ">
                 <h2 className="text-lg font-bold wider">Sahil Jain</h2>
                 <p className="text-md text-[#777777] font-[500] wider">
@@ -67,7 +70,7 @@ const Dashboard = () => {
                 </p>
                 <div className=" mt-2 flex flex-col justify-start items-start space-y-3">
                   <div className="flex space-x-2">
-                    <Image src={Phone} style={{color:'#105BBE'}} alt="ph" />
+                    <Image src={Phone} style={{ color: "#105BBE" }} alt="ph" />
                     <h3 className="text-[#777777] text-md">9009388921</h3>
                   </div>
                   <div className="flex space-x-2">
