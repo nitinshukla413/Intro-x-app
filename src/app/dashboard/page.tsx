@@ -1,145 +1,117 @@
 "use client";
 import HeaderBand from "@/components/header-band";
-import TabView from "@/components/tabview/tabview";
 import { Avatar } from "@mui/material";
+import Phone from "../../../public/assets/images/phone.svg";
+import mail from "../../../public/assets/images/mail.svg";
+import location from "../../../public/assets/images/location.svg";
 import Image from "next/image";
-import React, { useState } from "react";
-
-const Tab = ({
-  label,
-  isActive,
-  onClick,
-}: {
-  label: any;
-  isActive: any;
-  onClick: any;
-}) => {
-  const tabClasses = `inline-block p-4 border-b-2 rounded-t-lg cursor-pointer ${
-    isActive
-      ? "border-blue-500 text-blue-500"
-      : "hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-  }`;
-
-  return (
-    <button className={tabClasses} onClick={onClick}>
-      {label}
-    </button>
-  );
-};
-
+import TabNavigator from "@/components/tab";
+import ProductCard from "@/components/produce-card";
+import Wrapper from "@/components/wrapper";
 const Dashboard = () => {
-  const [activeTab, setActiveTab] = useState("profile");
-
-  const handleTabClick = (tabId: any) => {
-    setActiveTab(tabId);
+  const Box = ({
+    title,
+    subtitle,
+    color,
+    large = false,
+  }: {
+    title: string;
+    subtitle: string;
+    large?: boolean;
+    color: string;
+  }) => {
+    return (
+      <div
+        className={`bg-[${color}] ${
+          large ? "w-[11vw] h-[13vh]" : " w-[9vw] h-[11vh]"
+        } rounded-lg  flex-col flex justify-center items-center mx-2 my-2`}
+      >
+        <h2 className="text-3xl text-white font-[600]  w-4/5 text-center">
+          {title}
+        </h2>
+        <h2 className="text-md text-white w-4/5 text-center ">{subtitle}</h2>
+      </div>
+    );
   };
+  const Products = ({ productList }: { productList: any[] }) => {
+    return (
+      <div className="flex flex-wrap ">
+        {["ad", "ad", "ad", "ad", "ad", "ad", "ad", "ad", "ad"]?.map((elem) => (
+          <ProductCard mobileView></ProductCard>
+        ))}
+      </div>
+    );
+  };
+  const getTabContent = (id: number) => {
+    return (
+      <Products
+        productList={["ad", "ad", "ad", "ad", "ad", "ad", "ad", "ad", "ad"]}
+      />
+    );
+  };
+  const Card = () => {};
   return (
-    <div className="flex flex-col">
-      <HeaderBand title={"Dasboard"} />
-      {/* Parent Card (Left Side) */}
-      <div className="flex flex-col justify-center items-center">
-        <div className="w-[80%]  p-4 border rounded-lg shadow-md">
-          <div className="flex items-center space-x-4">
-            {/* Card */}
-            <div className="max-w-full w-full p-6 bg-white border rounded-lg shadow-md">
-              <div className="flex justify-evenly items-center ">
-                <Avatar
-                  alt="Remy Sharp"
-                  src="https://picsum.photos/id/237/200/300"
-                  className="h-[8vw] w-[8vw] border-3 border-green"
-                />
-                <div className="w-full flex-[0.6]">
-                  <h5 className="text-xl font-bold">Sahil Jain</h5>
-                  <p className="text-gray-600">New Seller</p>
-                  <p className="text-gray-600">+7999543764</p>
-                  <p className="text-gray-600">Mumbai</p>
-                  <p className="text-gray-600">30 min ago</p>
+    <div className="flex flex-col justify-center items-center w-full">
+      <HeaderBand title="Dashboard"></HeaderBand>
+      <Wrapper>
+        <div className="relative -top-10 w-full">
+          <div className="flex justify-start p-5 px-5 rounded-2xl items-center shadow-[2px_10px_32px_-15px_rgba(0,0,0,0.3)] bg-white">
+            <div className="flex border-2 items-center justify-start  border-[#7777] p-3 px-10 rounded-2xl">
+              <Avatar className=" bg-[#105BBE]  color-white font-bold h-[11vh] w-[6vw]">
+                SJ
+              </Avatar>
+              <div className="flex flex-col pl-5 justify-start items-start ">
+                <h2 className="text-lg font-bold wider">Sahil Jain</h2>
+                <p className="text-md text-[#777777] font-[500] wider">
+                  New Seller
+                </p>
+                <div className=" mt-2 flex flex-col justify-start items-start space-y-3">
+                  <div className="flex space-x-2">
+                    <Image src={Phone} alt="ph" />
+                    <h3 className="text-[#777777] text-md">9009388921</h3>
+                  </div>
+                  <div className="flex space-x-2">
+                    <Image src={mail} alt="ph" />
+                    <h3 className="text-[#777777] text-md">
+                      infoapp@gmail.com
+                    </h3>
+                  </div>
+                  <div className="flex space-x-2">
+                    <Image src={location} alt="ph" />
+                    <h3 className="text-[#777777] text-md">Mumbai</h3>
+                  </div>
                 </div>
               </div>
             </div>
-
-            {/* Credits Remaining Boxes */}
-            <div className="flex ml-4 w-[100%]">
-              <div className="w-40 h-40 bg-[#0F0158] m-3 text-white rounded-lg flex items-center justify-center flex-col">
-                <p className="text-base font-bold">1000</p>
-                <p className="text-sm">Credit</p>
-              </div>
-
-              <div className="w-28 h-28 bg-[#0044BB] m-3 text-white rounded-lg flex items-center justify-center place-self-center flex-col">
-                <p className="text-base font-bold">500</p>
-                <p className="text-sm">Credit</p>
-              </div>
-
-              <div className="w-28 h-28 bg-[#0044BB] m-3 text-white rounded-lg flex items-center justify-center place-self-center flex-col">
-                <p className="text-base font-bold">250</p>
-                <p className="text-sm">Credit</p>
-              </div>
-              <div className="w-28 h-28 bg-[#0044BB] m-3 text-white rounded-lg flex items-center justify-center place-self-center flex-col">
-                <p className="text-base font-bold">500</p>
-                <p className="text-sm">Credit</p>
-              </div>
-              <div className="w-28 h-28 bg-[#0044BB] m-3 text-white rounded-lg flex items-center justify-center place-self-center flex-col">
-                <p className="text-base font-bold">500</p>
-                <p className="text-sm">Credit</p>
-              </div>
-              <div className="w-28 h-28 bg-[#0044BB] m-3 text-white rounded-lg flex items-center justify-center place-self-center flex-col">
-                <p className="text-base font-bold">500</p>
-                <p className="text-sm">Credit</p>
-              </div>
+            <div className="flex flex-wrap justify-center item-center">
+              <Box
+                title="1000"
+                subtitle="Credits"
+                large={true}
+                color={"#0F0158"}
+              />
+              <Box title="200" subtitle=" Products List" color={"#0044BB"} />
+              <Box title="50" subtitle="Leads" color={"#0044BB"} />
+              <Box title="30000" subtitle="Profile Views" color={"#0044BB"} />
+              <Box title="500" subtitle="Calls received" color={"#0044BB"} />
+              <Box title="600" subtitle="Messages received" color={"#0044BB"} />
             </div>
           </div>
         </div>
 
-        <div className="w-[80%] mb-4 border-b border-gray-200 dark:border-gray-700">
-          <Tab
-            label="Profile"
-            isActive={activeTab === "profile"}
-            onClick={() => handleTabClick("profile")}
-          />
-          <Tab
-            label="Dashboard"
-            isActive={activeTab === "dashboard"}
-            onClick={() => handleTabClick("dashboard")}
-          />
-          <Tab
-            label="Settings"
-            isActive={activeTab === "settings"}
-            onClick={() => handleTabClick("settings")}
-          />
-          <Tab
-            label="Contacts"
-            isActive={activeTab === "contacts"}
-            onClick={() => handleTabClick("contacts")}
+        <div className="mt-10">
+          <TabNavigator
+            tabs={[
+              "Plants & Machinery",
+              "PLOTS",
+              "CONSULTANCY",
+              "ALL PRODUCTS",
+            ]}
+            getTabContent={getTabContent}
           />
         </div>
-      </div>
-
-      {/* TabView Component (Below the Card) */}
-      {activeTab === "profile" && (
-        <div className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-          {/* Profile Content */}
-        </div>
-      )}
-      {activeTab === "dashboard" && (
-        <div className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-          {/* Dashboard Content */}
-        </div>
-      )}
-      {activeTab === "settings" && (
-        <div className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-          {/* Settings Content */}
-        </div>
-      )}
-      {activeTab === "contacts" && (
-        <div className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-          {/* Contacts Content */}
-        </div>
-      )}
-
-      {/* Points Section (Right Side) */}
-      {/* You can add your points section here */}
+      </Wrapper>
     </div>
   );
 };
-
 export default Dashboard;

@@ -50,19 +50,19 @@ const Drawer = ({
               Dashboard
             </Link>
             <Link
-              href="/"
+              href="/profile"
               className="p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e]"
             >
               Profile
             </Link>
             <Link
-              href="/"
+              href="/business-profile"
               className="p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e]"
             >
               Business Profile
             </Link>
             <Link
-              href="/"
+              href="/add-product"
               className="p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e]"
             >
               Add Product
