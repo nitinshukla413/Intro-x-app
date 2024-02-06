@@ -17,13 +17,14 @@ const ProductGrid = ({
   title,
   highlightTitle,
   afterhighlight,
+  handleClose=()=>{}
 }: {
   title: string;
   highlightTitle: string;
   afterhighlight?: string;
+  handleClose:()=>void
 }) => {
   const [selectedOption, setSelectedOption] = useState(options.location);
-  const handleClose = () => {};
   return (
     <div
       data-aos="fade-left"

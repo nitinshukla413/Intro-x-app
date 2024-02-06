@@ -1,10 +1,13 @@
+"use client";
 import ProductGrid from "@/components/product-grid";
 import SearchBox from "@/components/search";
 import Wrapper from "@/components/wrapper";
 import LocationSection from "@/components/locationSection";
 import { TypesSection } from "@/components/typeSection";
 import SectionFeature from "@/components/sectionFeature";
+import { useRouter } from "next/navigation";
 export default function Home() {
+  const router = useRouter();
   return (
     <div className="flex flex-col justify-start items-center">
       <div className="w-full bg-[#0044BB] h-[50vh] flex justify-center items-center">
@@ -21,11 +24,26 @@ export default function Home() {
       <Wrapper>
         <ProductGrid
           title={"Top"}
+          handleClose={() => {
+            router.push("/top-listing");
+          }}
           highlightTitle="Listing"
           afterhighlight="Near You"
         />
-        <ProductGrid title={"Top"} highlightTitle="Products" />
-        <ProductGrid title={"Browse Our Top"} highlightTitle="Categories" />
+        <ProductGrid
+          handleClose={() => {
+            router.push("/top-listing");
+          }}
+          title={"Top"}
+          highlightTitle="Products"
+        />
+        <ProductGrid
+          handleClose={() => {
+            router.push("/top-listing");
+          }}
+          title={"Browse Our Top"}
+          highlightTitle="Categories"
+        />
         <LocationSection />
       </Wrapper>
     </div>
