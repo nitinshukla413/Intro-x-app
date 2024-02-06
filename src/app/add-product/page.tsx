@@ -83,7 +83,9 @@ const AddProduct = () => {
               Your listing is in review, it will be live shortly.
             </p>
             <PrimaryBtn
-              handleClick={() => {}}
+              handleClick={() => {
+                router.push('/')
+              }}
               title="Explore more"
             ></PrimaryBtn>
           </div>
@@ -93,7 +95,7 @@ const AddProduct = () => {
   return (
     <div className="flex flex-col justify-center items-center">
       <HeaderBand
-        title={activeStep < 2 ? "Profile" : "Bussiness Profile"}
+        title={"Add Product"}
       ></HeaderBand>
       <Wrapper >
         <div className="flex justify-center px-10  items-center ">

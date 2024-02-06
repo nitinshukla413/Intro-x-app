@@ -200,7 +200,10 @@ const BusinessProfile = () => {
               with you shortly
             </p>
             <PrimaryBtn
-              handleClick={() => {}}
+              handleClick={() => {
+                router.push('/')
+
+              }}
               title="Explore more"
             ></PrimaryBtn>
           </div>
