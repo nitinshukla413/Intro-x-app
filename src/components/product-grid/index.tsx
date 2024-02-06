@@ -55,7 +55,7 @@ const ProductGrid = ({
           <ProductCard />
         </div>
         <PrimaryBtn
-          containerStyle={"mt-5"}
+          containerStyle={"mt-10"}
           handleClick={handleClose}
           title={"VIEW ALL NEARBY PRODUCTS"}
         />

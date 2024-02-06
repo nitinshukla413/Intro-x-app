@@ -9,7 +9,9 @@ const Leads = () => {
   return (
     <div className="flex flex-col items-center">
       <HeaderBand title="Leads" />
-      <div className="flex flex-wrap my-20 justify-center items-center">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1000" className="flex flex-wrap my-20 justify-center items-center">
         {[...Array(numberOfCards)].map((_, index) => (
             <LeadCard />
         ))}

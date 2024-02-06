@@ -11,9 +11,11 @@ import SearchBox from "../search";
 import PrimaryBtn from "../buttons/primary";
 import Drawer from "../side-drawer";
 import { IconButton } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 const AppBar = () => {
   const [openDrawer, setDrawer] = useState(false);
+  const router=useRouter()
   const toggleDrawer = () => {
     setDrawer((val) => !val);
   };
@@ -41,7 +43,9 @@ const AppBar = () => {
           >
             <Image src={HamBurger} alt="hm" className="h-5 w-5" />
           </IconButton>
-          <Image src={Logo} className="ml-3 h-full max-md:ml-0" alt="hm" />
+          <Image onClick={()=>{
+            router.push('/')
+          }} src={Logo} className="cursor-pointer ml-3 h-full max-md:ml-0" alt="hm" />
         </div>
         <SearchBox hideOnMobile />
         <div

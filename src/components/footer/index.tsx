@@ -21,11 +21,6 @@ import {
 } from "@/utils/constants";
 import logoLight from "../../../public/assets/images/introapp-light.svg";
 import Link from "next/link";
-{
-  /* <div className="flex flex-col">
-
-</div> */
-}
 const Footer = () => {
   return (
     <div className=" w-full flex max-lg:flex-wrap flex-col bg-[#080229] justify-center items-center">
@@ -94,7 +89,11 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex mt-5 flex-col justify-center max-md:w-[90%] items-start">
-            <Image src={logoLight} className="mb-5" alt="introapp" />
+            <Image
+              src={logoLight}
+              className="cursor-pointer mb-5"
+              alt="introapp"
+            />
             <div className="flex  flex-col space-y-5 ">
               <div className=" flex flex-col justify-start">
                 <h2 className="text-white text-lg">929,235</h2>
