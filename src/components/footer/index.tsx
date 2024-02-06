@@ -21,11 +21,6 @@ import {
 } from "@/utils/constants";
 import logoLight from "../../../public/assets/images/introapp-light.svg";
 import Link from "next/link";
-{
-  /* <div className="flex flex-col">
-
-</div> */
-}
 const Footer = () => {
   return (
     <div className=" w-full flex max-lg:flex-wrap flex-col bg-[#080229] justify-center items-center">
@@ -67,6 +62,7 @@ const Footer = () => {
                 return (
                   <Link
                     href={elem.link}
+                    key={elem.link}
                     className="text-lg cursor-pointer hover:text-[#0044BB] text-[#777777]"
                   >
                     {elem.title}
@@ -84,6 +80,7 @@ const Footer = () => {
               {information.map((elem) => {
                 return (
                   <Link
+                    key={elem.link}
                     href={elem?.link || "/"}
                     className="text-lg cursor-pointer hover:text-[#0044BB] text-[#777777]"
                   >
@@ -94,7 +91,11 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex mt-5 flex-col justify-center max-md:w-[90%] items-start">
-            <Image src={logoLight} className="mb-5" alt="introapp" />
+            <Image
+              src={logoLight}
+              className="cursor-pointer mb-5"
+              alt="introapp"
+            />
             <div className="flex  flex-col space-y-5 ">
               <div className=" flex flex-col justify-start">
                 <h2 className="text-white text-lg">929,235</h2>

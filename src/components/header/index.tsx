@@ -6,22 +6,34 @@ import Fav from "../../../public/assets/images/fav.svg";
 import Bell from "../../../public/assets/images/bell-dark.svg";
 import mail from "../../../public/assets/images/mail-dark.svg";
 import plus from "../../../public/assets/images/add-light.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SearchBox from "../search";
 import PrimaryBtn from "../buttons/primary";
 import Drawer from "../side-drawer";
 import { IconButton } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 const AppBar = () => {
   const [openDrawer, setDrawer] = useState(false);
+  const router=useRouter()
   const toggleDrawer = () => {
     setDrawer((val) => !val);
   };
   return (
-    <>
-      <div className="flex justify-between px-10 py-4 max-md:px-5 items-center bg-[#F5F5F5]">
-       <Drawer title={'Sahil Jain'} openDrawer={openDrawer} toggleDrawer={toggleDrawer}/>
-        <div className="flex justify-start items-center">
+    <header className={`sticky top-0 z-50 duration-300 shadow-lg `}>
+      <div
+        className={`flex justify-between px-10 py-4 max-md:px-5 items-center bg-[#F5F5F5]`}
+      >
+        <Drawer
+          title={"Sahil Jain"}
+          openDrawer={openDrawer}
+          toggleDrawer={toggleDrawer}
+        />
+        <div
+          data-aos="flip-up"
+          data-aos-duration="300"
+          className="flex justify-start items-center"
+        >
           <IconButton
             sx={{ p: "15px", mx: "10px" }}
             type="button"
@@ -31,17 +43,23 @@ const AppBar = () => {
           >
             <Image src={HamBurger} alt="hm" className="h-5 w-5" />
           </IconButton>
-          <Image src={Logo} className="ml-3 h-full max-md:ml-0" alt="hm" />
+          <Image onClick={()=>{
+            router.push('/')
+          }} src={Logo} className="cursor-pointer ml-3 h-full max-md:ml-0" alt="hm" />
         </div>
-        <SearchBox hideOnMobile/>
-        <div className="flex max-md:hidden max-lg:hidden space-x-3">
+        <SearchBox hideOnMobile />
+        <div
+          data-aos="flip-up"
+          data-aos-duration="300"
+          className="flex max-md:hidden max-lg:hidden space-x-3"
+        >
           <IconButton
             sx={{ p: "15px" }}
             type="button"
             aria-label="search"
             className="bg-white shadow-2xl"
           >
-            <Image src={Fav} alt="hm" className="h-5 w-5" />
+            <Image src={Fav} alt="hm" className="h-6 w-6" />
           </IconButton>
           <IconButton
             sx={{ p: "15px" }}
@@ -49,7 +67,7 @@ const AppBar = () => {
             aria-label="search"
             className="bg-white shadow-2xl"
           >
-            <Image src={mail} alt="hm" className="h-5 w-5" />
+            <Image src={mail} alt="hm" className="h-6 w-6" />
           </IconButton>
           <IconButton
             sx={{ p: "15px" }}
@@ -57,7 +75,7 @@ const AppBar = () => {
             aria-label="search"
             className="bg-white shadow-2xl"
           >
-            <Image src={Bell} alt="hm" className="h-5 w-5" />
+            <Image src={Bell} alt="hm" className="h-6 w-6" />
           </IconButton>
           <PrimaryBtn
             title={" Become a Seller"}
@@ -68,7 +86,7 @@ const AppBar = () => {
           />
         </div>
       </div>
-    </>
+    </header>
   );
 };
 export default AppBar;

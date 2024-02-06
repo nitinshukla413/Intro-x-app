@@ -14,6 +14,8 @@ import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import TabNavigator from "../tab";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { mainMenu,selectMenu } from "@/utils/constants";
 
 const Drawer = ({
   openDrawer,
@@ -24,58 +26,36 @@ const Drawer = ({
   openDrawer: boolean;
   toggleDrawer: () => void;
 }) => {
+  const router = useRouter();
+  const pathName = usePathname();
   const getTabContent = (id: number) => {
     switch (id) {
       case 0:
         return (
           <div className="flex flex-col w-full justify-start item-center">
-            <Link
-              href="/"
-              className="p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e]"
-            >
-              Home
-            </Link>
+            {mainMenu.map((elem,i) => (
+              <Link
+                href="/"
+                key={i}
+                className={`p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e] ${elem?.link===pathName?'bg-[#dedede4e] ':''}`}
+                >
+                Home
+              </Link>
+            ))}
           </div>
         );
       case 1:
         return (
           <div className="flex flex-col w-full justify-start item-center">
-            <Link
-              href="/dasboard"
-              className="p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e]"
-            >
-              Dashboard
-            </Link>
-            <Link
-              href="/"
-              className="p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e]"
-            >
-              Profile
-            </Link>
-            <Link
-              href="/"
-              className="p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e]"
-            >
-              Business Profile
-            </Link>
-            <Link
-              href="/"
-              className="p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e]"
-            >
-              Add Product
-            </Link>
-            <Link
-              href="/"
-              className="p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e]"
-            >
-              Leads
-            </Link>
-            <Link
-              href="/"
-              className="p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e]"
-            >
-              Enquiries
-            </Link>
+            {selectMenu.map((elem: any,i) => (
+              <Link
+                href={elem?.link||'/'}
+                key={i}
+                className={`p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e] ${elem?.link===pathName?'bg-[#dedede4e] ':''}`}
+              >
+                {elem?.title}
+              </Link>
+            ))}
           </div>
         );
       case 2:
@@ -90,7 +70,9 @@ const Drawer = ({
     >
       <div className="flex overflow-scroll flex-col justify-start items-center bg-white h-full w-[22vw] max-md:w-[80vw]">
         <div className="flex justify-between w-full items-center p-5 border-b border-[#DEE2E6]">
-          <Image alt="" src={Logo} className="h-full w-[60%]" />
+          <Image alt="" onClick={()=>{
+            router.push('/')
+          }} src={Logo} className="h-full w-[60%] cursor-pointer" />
           <IconButton
             onClick={toggleDrawer}
             className="shadow-xl "
@@ -108,7 +90,10 @@ const Drawer = ({
           <h3 className="text-xl font-bold wider py-5">{title}</h3>
           <PrimaryBtn
             title={"Add a Product"}
-            handleClick={() => {}}
+            handleClick={() => {
+              router.push("/add-product");
+              toggleDrawer();
+            }}
             tailingIcon={
               <Image src={plus} className="h-8 w-8 -mb-[5px] -mr-1" alt="" />
             }
