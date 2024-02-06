@@ -67,7 +67,7 @@ const Drawer = ({
       onClose={toggleDrawer}
       onOpen={toggleDrawer}
     >
-      <div className="flex overflow-scroll flex-col justify-start items-center bg-white h-full w-[22vw] max-md:w-[80vw]">
+      <div className="flex overflow-scroll flex-col justify-start items-center bg-white h-full w-[22vw] max-md:w-[80vw] max-lg:w-[50vw]">
         <div className="flex justify-between w-full items-center p-5 border-b border-[#DEE2E6]">
           <Image
             alt=""

@@ -9,7 +9,7 @@ import img from "../../../public/assets/images/tick-animation-blue-success-feedb
 import Image from "next/image";
 import Step2Form from "./step2";
 import Step1Form from "./step1";
-const steps = ["Step 1", "Step 2"];
+const steps = ["Step 1"];
 
 const AddProduct = () => {
   const router = useRouter();
@@ -43,7 +43,6 @@ const AddProduct = () => {
   };
   const getFilled = (id: number) => {
     return true;
-
     switch (id) {
       case 0:
         return true;
@@ -70,8 +69,6 @@ const AddProduct = () => {
     switch (id) {
       case 0:
         return <Step1Form data={data} handleChange={handleChange} />;
-      case 1:
-        return <Step2Form data={data} handleChange={handleChange} />;
       case steps.length:
         return (
           <div className="flex flex-col justify-center items-center w-full h-full">
@@ -96,8 +93,8 @@ const AddProduct = () => {
     <div className="flex flex-col justify-center items-center">
       <HeaderBand title={"Add Product"}></HeaderBand>
       <Wrapper>
-        <div className="flex justify-center px-10  items-center ">
-          <div className=" flex-col w-full h-[70vh] mt-20 mb-20 max-md:mt-10 flex justify-center items-start">
+        <div className="flex justify-center px-10 max-md:px-0 items-center ">
+          <div className=" flex-col w-full h-[70vh] max-md:h-auto max-lg:mt-20 mt-40 mb-20 max-md:mt-10 max-md:mb-10 flex justify-center items-start">
             <div className="w-full flex flex-col justify-end items-end">
               <p className="text-md text-[#D9D9D9] font-bold">
                 {progressPercentage}%
@@ -118,11 +115,11 @@ const AddProduct = () => {
             <h2 className="text-xl max-md:text-lg text-black wider uppercase font-[600]">
               Product <span className="text-[#0044BB]"> information</span>
             </h2>
-            <div className="w-full p-8 my-5 max-md:pt-5 px-10 min-h-[50vh] max-md:min-h-[60vh]  flex justify-start items-start rounded-xl border-2 border-[#DDDDDD] bg-[#FAFAFA]">
+            <div className="w-full p-8 my-5 max-md:pt-5 px-10   flex justify-start items-start rounded-xl border-2 border-[#DDDDDD] bg-[#FAFAFA]">
               {getForm(activeStep)}
             </div>
             {activeStep !== steps.length && (
-              <div className="flex item-center justify-between mt-4 w-full px-10">
+              <div className="flex item-center justify-between mt-4 max-md:mt-3 max-md:px-5 w-full px-10">
                 <PrimaryBtn
                   handleClick={handleBack}
                   title="  Previous  "
