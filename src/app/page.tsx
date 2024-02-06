@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
   return (
-    <div className="flex flex-col justify-start items-center">
+    <div className="flex flex-col justify-start items-center pb-40">
       <div className="w-full bg-[url('../../public/assets/images/banner.png')] bg-cover bg-no-repeat h-[50vh] flex justify-center items-center">
         <SearchBox />
       </div>
@@ -32,14 +32,15 @@ export default function Home() {
         />
         <ProductGrid
           handleClose={() => {
-            router.push("/top-listing");
+            router.push("/top-listing?id=products");
           }}
           title={"Top"}
           highlightTitle="Products"
         />
         <ProductGrid
-          handleClose={() => {
-            router.push("/top-listing");
+        showTabs
+          handleClose={(Categories?:string) => {
+            router.push(`/top-listing?id=${Categories}`);
           }}
           title={"Browse Our Top"}
           highlightTitle="Categories"

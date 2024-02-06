@@ -8,6 +8,7 @@ import Image from "next/image";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import PrimaryBtn from "../buttons/primary";
+import TabNavigator from "../tab";
 
 enum options {
   "location" = "location",
@@ -17,19 +18,39 @@ const ProductGrid = ({
   title,
   highlightTitle,
   afterhighlight,
-  handleClose=()=>{}
+  handleClose = (id?: any) => {},
+  showTabs = false,
 }: {
   title: string;
   highlightTitle: string;
+  showTabs?: boolean;
   afterhighlight?: string;
-  handleClose:()=>void
+  handleClose: () => void;
 }) => {
+  let tabs = ["Plants & Machinery", "Plots", "Consultants", "all PRODUCTS"];
   const [selectedOption, setSelectedOption] = useState(options.location);
+  const [id, setId] = useState<string>("");
+  const getTabContent = (id?: number) => {
+    if (!!id && id !== null) {
+      setId(tabs[id]);
+    }
+    return (
+      <div
+        className={`flex max-md:flex-wrap w-full max-lg:flex-wrap max-lg:space-x-0 max-lg:justify-center max-lg:space-y-10 justify-start space-x-10 max-md:justify-center max-md:space-y-10 max-md:space-x-0 items-center ${
+          showTabs ? "mt-10" : ""
+        }`}
+      >
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
+    );
+  };
   return (
     <div
       data-aos="fade-left"
       data-aos-duration="700"
-      className="flex flex-col justify-start items-center mb-10"
+      className="flex flex-col justify-start items-center mb-10  pt-20 max-md:pt-10"
     >
       <div className="flex max-md:flex-col justify-between w-full">
         <h2 className="max-md:text-center text-3xl max-md:text-2xl max-md:mb-5 font-bold wider mb-10">
@@ -47,17 +68,18 @@ const ProductGrid = ({
           <Image src={Arrow} className="h-5 w-4 ml-3 mt-1" alt="<" />
         </div>
       </div>
-      <div
-        className="flex flex-col items-center max-md:mt-5 justify-center "
-      >
-        <div className="flex max-md:flex-wrap w-full max-lg:flex-wrap max-lg:space-x-0 max-lg:justify-center max-lg:space-y-10 justify-start space-x-10 max-md:justify-center max-md:space-y-10 max-md:space-x-0 items-center">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </div>
+      <div className="flex flex-col items-center max-md:mt-5 justify-center ">
+        {showTabs ? (
+          <TabNavigator
+            tabs={tabs}
+            getTabContent={getTabContent}
+          ></TabNavigator>
+        ) : (
+          getTabContent()
+        )}
         <PrimaryBtn
           containerStyle={"mt-10"}
-          handleClick={handleClose}
+          handleClick={() => handleClose(id?.length > 0 ? id : tabs[0])}
           title={"VIEW ALL NEARBY PRODUCTS"}
         />
       </div>
