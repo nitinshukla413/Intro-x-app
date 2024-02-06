@@ -27,10 +27,10 @@ const ProductCard = ({
     data-aos="fade-up"
       className={`${
         mobileView ? "flex-col mb-10 ml-10 justify-center items-center mt-10" : ""
-      } cursor-pointer max-md:flex-col hover:scale-105 flex delay-3000  border-[#c3c3c4] rounded-xl  bg-[#F5F5F5] `}
+      } cursor-pointer max-md:flex-col hover:scale-105 flex delay-3000  w-full border-[#c3c3c4] rounded-xl  bg-[#F5F5F5] `}
     >
-      <Image alt="image" src={image || TempImg} className="flex-[0.5]"></Image>
-      <div className="flex flex-col justify-start items-start p-5 flex-[0.5]">
+      <Image alt="image" src={image || TempImg} className="flex-[0.5] max-md:w-full"></Image>
+      <div className="flex flex-col justify-start items-start p-5 flex-[0.5] max-md:w-full">
         <h3 className="text-md w-full font-[500] wider text-[#777777]">
           {title || " Raunak Lake view at Powai"}
         </h3>

@@ -16,7 +16,7 @@ export const TypesSection = () => {
         {features.map((elem, i) => (
           <div
             key={i}
-            className={`flex  flex-col w-[25%] max-md:w-full border-[#E8E8E8] justify-center items-center ${
+            className={`flex  max-md:py-5 flex-col w-[25%] max-md:w-full border-[#E8E8E8] justify-center items-center ${
               i !== features?.length - 1
                 ? " border-r-2 max-md:border-b-2 max-md:border-r-0 "
                 : ""

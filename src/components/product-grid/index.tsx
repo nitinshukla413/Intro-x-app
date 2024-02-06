@@ -31,8 +31,8 @@ const ProductGrid = ({
       data-aos-duration="700"
       className="flex flex-col justify-start items-center mb-10"
     >
-      <div className="flex max-md:flex-wrap justify-between w-full">
-        <h2 className="text-3xl max-md:text-2xl max-md:mb-5 font-bold wider mb-10">
+      <div className="flex max-md:flex-col justify-between w-full">
+        <h2 className="max-md:text-center text-3xl max-md:text-2xl max-md:mb-5 font-bold wider mb-10">
           {title || "Browse Our Top"}
           {"  "}
           <span className="text-[#004BE5]">
@@ -50,7 +50,7 @@ const ProductGrid = ({
       <div
         className="flex flex-col items-center max-md:mt-5 justify-center "
       >
-        <div className="flex max-md:flex-wrap  max-lg:flex-wrap max-lg:space-x-0 max-lg:justify-center max-lg:space-y-10 justify-start space-x-10 max-md:justify-center max-md:space-y-10 max-md:space-x-0 items-center">
+        <div className="flex max-md:flex-wrap w-full max-lg:flex-wrap max-lg:space-x-0 max-lg:justify-center max-lg:space-y-10 justify-start space-x-10 max-md:justify-center max-md:space-y-10 max-md:space-x-0 items-center">
           <ProductCard />
           <ProductCard />
           <ProductCard />
