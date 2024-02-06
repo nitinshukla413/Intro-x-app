@@ -67,7 +67,7 @@ const Dashboard = () => {
                 </p>
                 <div className=" mt-2 flex flex-col justify-start items-start space-y-3">
                   <div className="flex space-x-2">
-                    <Image src={Phone} alt="ph" />
+                    <Image src={Phone} style={{color:'#105BBE'}} alt="ph" />
                     <h3 className="text-[#777777] text-md">9009388921</h3>
                   </div>
                   <div className="flex space-x-2">
