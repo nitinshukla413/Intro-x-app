@@ -14,7 +14,7 @@ const Coins = () => {
     { id: 5, credits: 220, price: 339.99, validity: "20 days" },
   ];
 
-  const handlePlanChange = (planId) => {
+  const handlePlanChange = (planId:any) => {
     setSelectedPlan(planId);
   };
 

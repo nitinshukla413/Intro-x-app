@@ -1,4 +1,3 @@
-// pages/login.js
 "use client";
 import { useState } from "react";
 import { LinearProgress } from "@mui/material";
@@ -8,7 +7,8 @@ import Wrapper from "@/components/wrapper";
 import PrimaryBtn from "@/components/buttons/primary";
 import img from "../../../public/assets/images/tick-animation-blue-success-feedback-plX7vWp4dQ.png";
 import Image from "next/image";
-import { getInputText, typeOfData } from "../business-profile/page";
+import Step2Form from "./step2";
+import Step1Form from "./step1";
 const steps = ["Step 1", "Step 2"];
 
 const AddProduct = () => {
@@ -84,7 +84,7 @@ const AddProduct = () => {
             </p>
             <PrimaryBtn
               handleClick={() => {
-                router.push('/')
+                router.push("/");
               }}
               title="Explore more"
             ></PrimaryBtn>
@@ -94,10 +94,8 @@ const AddProduct = () => {
   };
   return (
     <div className="flex flex-col justify-center items-center">
-      <HeaderBand
-        title={"Add Product"}
-      ></HeaderBand>
-      <Wrapper >
+      <HeaderBand title={"Add Product"}></HeaderBand>
+      <Wrapper>
         <div className="flex justify-center px-10  items-center ">
           <div className=" flex-col w-full h-[70vh] mt-20 mb-20 max-md:mt-10 flex justify-center items-start">
             <div className="w-full flex flex-col justify-end items-end">
@@ -141,122 +139,6 @@ const AddProduct = () => {
           </div>
         </div>
       </Wrapper>
-    </div>
-  );
-};
-
-const Step1Form = ({
-  data,
-  handleChange,
-}: {
-  data: any;
-  handleChange: (val: any) => void;
-}) => {
-  const nameInput = getInputText({
-    id: typeOfData.text,
-    label: "Product title ",
-    placeholder: "Product title ",
-    val: data.title,
-    handleChange: (event: any) => {
-      handleChange({ title: event.target.value });
-    },
-  });
-  const mailInput = getInputText({
-    id: typeOfData.select,
-    label: "Product Category",
-    placeholder: "Product Category",
-    val: data.category,
-    menuList: ["Plats & Machinery", "Plots", "Consultants", "No. Of Employees"],
-    handleChange: (event: any) => {
-      handleChange({ category: event.target.value });
-    },
-  });
-  const dobInput = getInputText({
-    id: typeOfData.text,
-    val: data.description,
-    label: "description",
-    placeholder: "description",
-    handleChange: (event: string) => {
-      handleChange({ description: event.target.value });
-    },
-  });
-  return (
-    <div className="flex flex-wrap  w-full justify-start items-center max-md:flex-col ">
-      {nameInput &&
-        nameInput({
-          className: "w-[45%] max-md:w-full  mr-5 max-md:mr-0 mb-20  ",
-        })}
-      {mailInput && mailInput({ className: "w-[50%] max-md:w-full mb-10" })}
-      {dobInput && dobInput({ className: "w-[45%] max-md:w-full mb-20 " })}
-    </div>
-  );
-};
-
-const Step2Form = ({
-  data,
-  handleChange,
-}: {
-  data: any;
-  handleChange: (val: any) => void;
-}) => {
-  const field1 = getInputText({
-    id: typeOfData.text,
-    label: "price",
-    placeholder: "price",
-    val: data.price,
-    handleChange: (event: any) => {
-      handleChange({ price: event.target.value });
-    },
-  });
-  const field2 = getInputText({
-    id: typeOfData.text,
-    label: "location",
-    placeholder: "location",
-    val: data.location,
-    handleChange: (event: any) => {
-      handleChange({ location: event.target.value });
-    },
-  });
-  const field3 = getInputText({
-    id: typeOfData.file,
-    label: "Product Images",
-    placeholder: "Product Images",
-    val: data.productImages,
-    handleChange: (event: any) => {
-      handleChange({ productImages: event.target.value });
-    },
-  });
-  const field4 = getInputText({
-    id: typeOfData.file,
-    label: "Product Videos",
-    placeholder: "Product Videos",
-    val: data.productVideos,
-
-    handleChange: (event: any) => {
-      handleChange({ productVideos: event.target.value });
-    },
-  });
-
-  return (
-    <div className="flex flex-wrap w-full justify-start items-center max-md:flex-col ">
-      {field1 &&
-        field1({
-          className: "w-[45%] max-md:w-full mr-5 max-md:mr-0 mb-10  ",
-        })}
-      {field2 &&
-        field2({
-          className: "w-[45%] max-md:w-full mr-5 max-md:mr-0 mb-10 ",
-        })}
-
-      {field3 &&
-        field3({
-          className: "w-[50%] max-md:w-full  max-md:mr-0 mb-10 ",
-        })}
-      {field4 &&
-        field4({
-          className:
-            "w-[50%] flex justify-center items-start max-md:w-full max-md:mr-0 mb-10 ",
-        })}
     </div>
   );
 };

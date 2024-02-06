@@ -2,12 +2,7 @@
 "use client";
 import { useState } from "react";
 import {
-  FormControl,
-  InputLabel,
   LinearProgress,
-  MenuItem,
-  Select,
-  TextField,
   Typography,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
@@ -16,86 +11,8 @@ import Wrapper from "@/components/wrapper";
 import PrimaryBtn from "@/components/buttons/primary";
 import img from "../../../public/assets/images/tick-animation-blue-success-feedback-plX7vWp4dQ.png";
 import Image from "next/image";
+import { getInputText, typeOfData } from "@/utils/common-function";
 const steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];
-export const typeOfData = {
-  text: "text",
-  dob: "dob",
-  email: "email",
-  file: "file",
-  number: "number",
-  select: "select",
-};
-
-export const getInputText = ({
-  id,
-  val,
-  handleChange,
-  placeholder,
-  label,
-  menuList,
-}: {
-  id: string;
-  val: string;
-  label?: string;
-  placeholder?: string;
-  menuList?: any;
-  handleChange: (val: any) => void;
-}) => {
-  // Define inner functional components
-  const TextComponent = (props: any) => (
-    <TextField
-      {...props}
-      id="standard-basic"
-      label={label}
-      variant="standard"
-      placeholder={placeholder}
-      type={id}
-      onChange={handleChange}
-      value={val}
-    />
-  );
-
-  const SelectComponent = (props: any) => (
-    <FormControl {...props} size="small">
-      <InputLabel id="demo-select-small-label">{label}</InputLabel>
-      <Select
-        {...props}
-        labelId="demo-select-small-label"
-        id="demo-select-small"
-        value={val}
-        label={label}
-        onChange={handleChange}
-      >
-        {menuList?.map((elem: string, i: number) => (
-          <MenuItem value={i} key={i}>{elem}</MenuItem>
-        ))}
-      </Select>
-    </FormControl>
-  );
-
-  const FileComponent = (props: any) => (
-    <div className="flex flex-col justify-start ">
-      <h2 className="text-[#787878] mb-2">{label}</h2>
-      <TextField type="file" className="border-none" {...props} />
-    </div>
-  );
-
-  // Switch statement to return the appropriate component
-  switch (id) {
-    case typeOfData.dob:
-    case typeOfData.text:
-    case typeOfData.number:
-    case typeOfData.email:
-      return TextComponent;
-    case typeOfData.select:
-      return SelectComponent;
-    case typeOfData.file:
-      return FileComponent;
-    default:
-      break;
-  }
-};
-
 
 const BusinessProfile = () => {
   const router = useRouter();

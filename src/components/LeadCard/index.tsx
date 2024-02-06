@@ -34,7 +34,6 @@ const LeadCard = () => {
           </>
         ) : (
           <PrimaryBtn title="Buy Now" handleClick={onPress}>
-            <p className="p-2">Buy Now</p>
           </PrimaryBtn>
         )}
       </div>

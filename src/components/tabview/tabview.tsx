@@ -4,7 +4,7 @@ import React, { useState } from "react";
 const TabView = () => {
   const [activeTab, setActiveTab] = useState("category1");
 
-  const handleTabChange = (tab) => {
+  const handleTabChange = (tab:any) => {
     setActiveTab(tab);
   };
 
