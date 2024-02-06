@@ -18,14 +18,14 @@ const ProductGrid = ({
   title,
   highlightTitle,
   afterhighlight,
-  handleClose = (id?: any) => {},
+  handleClose = (id) => {},
   showTabs = false,
 }: {
   title: string;
   highlightTitle: string;
   showTabs?: boolean;
   afterhighlight?: string;
-  handleClose: () => void;
+  handleClose: (id?:any) => void;
 }) => {
   let tabs = ["Plants & Machinery", "Plots", "Consultants", "all PRODUCTS"];
   const [selectedOption, setSelectedOption] = useState(options.location);
@@ -79,7 +79,7 @@ const ProductGrid = ({
         )}
         <PrimaryBtn
           containerStyle={"mt-10"}
-          handleClick={() => handleClose(id?.length > 0 ? id : tabs[0])}
+          handleClick={() => handleClose(id && id?.length > 0 ? id : tabs[0])}
           title={"VIEW ALL NEARBY PRODUCTS"}
         />
       </div>
