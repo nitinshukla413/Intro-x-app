@@ -34,7 +34,7 @@ const ProductCard = ({
         <h3 className="text-md w-full font-[500] wider text-[#777777]">
           {title || " Raunak Lake view at Powai"}
         </h3>
-        <h3 className="text-lg font-extrabold text-[#0244B8]">
+        <h3 className="text-md my-2 font-extrabold text-[#777777]">
           {"₹ " + (price || "9000")}
         </h3>
         <div className="flex flex-col w-full space-y-1">
