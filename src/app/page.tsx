@@ -20,9 +20,12 @@ import SimpleSlider from "@/components/slider";
 export default function Home() {
   return (
     <div className="flex flex-col justify-start items-center">
-      
       <BannerSection />
-      <div className="relative -top-10 w-full">
+      <div
+        data-aos="fade-left"
+        data-aos-duration="300"
+        className="relative -top-10 w-full"
+      >
         <TypesSection />
       </div>
       <SectionFeature />
@@ -48,21 +51,27 @@ export const BannerSection = () => {
 };
 export const LocationSection = () => {
   const images = [
-    { img: mumbai, w: "20%" },
-    { img: delhi, w: "40%" },
-    { img: nashik, w: "45%" },
-    { img: nagpur, w: "45%" },
-    { img: ratnigir, w: "40%" },
-    { img: latur, w: "20%" },
+    { img: mumbai, w: "12%" },
+    { img: delhi, w: "20%" },
+    { img: nashik, w: "35%" },
+    { img: nagpur, w: "35%" },
+    { img: ratnigir, w: "20%" },
+    { img: latur, w: "12%" },
   ];
   return (
     <div className="flex flex-col">
-      <h3 className="text-3xl max-md:text-2xl text-black font-[500] mb-10 max-md:mb-5">
+      <h3
+        data-aos="fade-right"
+        data-aos-duration="1000"
+        className="text-3xl max-md:text-2xl text-black font-[500] mb-10 max-md:mb-5"
+      >
         Products By Top <span className="text-[#0344B6]">Cities</span>
       </h3>
       <div className="flex flex-wrap justify-center items-center">
         {images?.map((elem, i) => (
           <Image
+            data-aos={i % 2 == 0 ? "fade-up" : "fade-left"}
+            data-aos-duration="1000"
             src={elem.img}
             className={`hover:scale-105 h-[25vh] max-lg:h-[20vh] object-fill delay-3000 cursor-pointer w-[${elem.w}] max-lg:w-[30%] max-md:w-[100%] max-md:mr-0 max-md:mb-5 mr-10 mb-10`}
             alt={"city"}
@@ -90,8 +99,14 @@ export const TypesSection = () => {
                 : ""
             }`}
           >
-            <Image src={elem.img} alt="ship" className="max-lg:w-10 max-lg:h-10" />
-            <h3 className="text-lg max-lg:text-sm font-[500] text-black mt-2">{elem.title}</h3>
+            <Image
+              src={elem.img}
+              alt="ship"
+              className="max-lg:w-10 max-lg:h-10"
+            />
+            <h3 className="text-lg max-lg:text-sm font-[500] text-black mt-2">
+              {elem.title}
+            </h3>
           </div>
         ))}
       </div>
@@ -109,7 +124,11 @@ export const SectionFeature = () => {
     <div className="max-md:py-5 max-md:px-10 max-md:my-10 py-10 my-20 mt-10 px-40  bg-[#080229]  w-full">
       <div className=" flex justify-evenly max-md:space-y-5  items-center max-md:flex-col">
         {features.map((elem) => (
-          <div className="flex flex-col justify-center items-center">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="300"
+            className="flex flex-col justify-center items-center"
+          >
             <Image
               src={elem.img}
               className="max-md:h-10 max-md:w-10 max-lg:w-10 max-lg:h-10"

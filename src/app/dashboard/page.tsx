@@ -54,7 +54,7 @@ const Dashboard = () => {
     <div className="flex flex-col justify-center items-center w-full">
       <HeaderBand title="Dashboard"></HeaderBand>
       <Wrapper>
-        <div className="relative -top-10 w-full">
+        <div  data-aos="fade-right" className="relative -top-10 w-full">
           <div className="flex justify-start p-5 px-5 rounded-2xl items-center shadow-[2px_10px_32px_-15px_rgba(0,0,0,0.3)] bg-white">
             <div className="flex border-2 items-center justify-start  border-[#7777] p-3 px-10 rounded-2xl">
               <Avatar className=" bg-[#105BBE]  color-white font-bold h-[11vh] w-[6vw]">

@@ -27,7 +27,11 @@ const AppBar = () => {
           openDrawer={openDrawer}
           toggleDrawer={toggleDrawer}
         />
-        <div className="flex justify-start items-center">
+        <div
+          data-aos="flip-up"
+          data-aos-duration="300"
+          className="flex justify-start items-center"
+        >
           <IconButton
             sx={{ p: "15px", mx: "10px" }}
             type="button"
@@ -40,7 +44,11 @@ const AppBar = () => {
           <Image src={Logo} className="ml-3 h-full max-md:ml-0" alt="hm" />
         </div>
         <SearchBox hideOnMobile />
-        <div className="flex max-md:hidden max-lg:hidden space-x-3">
+        <div
+          data-aos="flip-up"
+          data-aos-duration="300"
+          className="flex max-md:hidden max-lg:hidden space-x-3"
+        >
           <IconButton
             sx={{ p: "15px" }}
             type="button"

@@ -43,18 +43,6 @@ export const getInputText = ({
 }) => {
   switch (id) {
     case typeOfData.dob:
-    // return (props: any) => (
-    //   <LocalizationProvider dateAdapter={AdapterDayjs}>
-    //     <DemoContainer components={["DatePicker"]}>
-    //       <DatePicker
-    //         {...props}
-    //         value={val}
-    //         onChange={handleChange}
-    //         label={label}
-    //       />
-    //     </DemoContainer>
-    //   </LocalizationProvider>
-    // );
     case typeOfData.text:
     case typeOfData.number:
     case typeOfData.email:
@@ -191,18 +179,27 @@ const BusinessProfile = () => {
       case steps.length:
         return (
           <div className="flex flex-col justify-center items-center w-full h-full">
-            <Image src={img} alt="" className="h-30 w-30" />
+            <Image
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              src={img}
+              alt=""
+              className="h-30 w-30"
+            />
             <h3 className="text-[50px] max-md:text-xl font-bold text-[#0044BB]">
               Thank You
             </h3>
-            <p className="text-md text-[#999999] py-5">
+            <p
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              className="text-md text-[#999999] py-5"
+            >
               Thank you for submitting sellers profile will get in touch
               with you shortly
             </p>
             <PrimaryBtn
               handleClick={() => {
-                router.push('/')
-
+                router.push("/");
               }}
               title="Explore more"
             ></PrimaryBtn>
@@ -212,11 +209,17 @@ const BusinessProfile = () => {
   };
   return (
     <div className="flex flex-col justify-center items-center">
-      <HeaderBand title={activeStep<2?"Profile":"Bussiness Profile"}></HeaderBand>
+      <HeaderBand
+        title={activeStep < 2 ? "Profile" : "Bussiness Profile"}
+      ></HeaderBand>
       <Wrapper>
         <div className="flex justify-center items-center mt-20 mb-20">
           <div className=" flex-col w-[80%] h-[70vh]  mt-20 mb-20 max-md:mt-10 flex justify-center items-start">
-            <div className="w-full flex flex-col justify-end items-end">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              className="w-full flex flex-col justify-end items-end"
+            >
               <p className="text-md text-[#D9D9D9] font-bold">
                 {progressPercentage}%
               </p>
@@ -233,13 +236,25 @@ const BusinessProfile = () => {
                 className="w-full mb-4 "
               />
             </div>
-            <h2 className="text-xl max-md:text-lg text-black wider uppercase font-[600]">
+            <h2
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              className="text-xl max-md:text-lg text-black wider uppercase font-[600]"
+            >
               Setup your <span className="text-[#0044BB]"> seller profile</span>
             </h2>
-            <h2 className="text-lg mt-5 max-md:text-md mb-5 max-md:mb-5 font-[600] uppercase text-[#9c9b9b]">
+            <h2
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              className="text-lg mt-5 max-md:text-md mb-5 max-md:mb-5 font-[600] uppercase text-[#9c9b9b]"
+            >
               Basic Details
             </h2>
-            <div className="w-full p-8 my-5 max-md:pt-5 px-10 min-h-[50vh] flex justify-start items-start rounded-xl border-2 border-[#DDDDDD] bg-[#FAFAFA]">
+            <div
+              data-aos="flip-up"
+              data-aos-duration="1000"
+              className="w-full p-8 my-5 max-md:pt-5 px-10 min-h-[50vh] flex justify-start items-start rounded-xl border-2 border-[#DDDDDD] bg-[#FAFAFA]"
+            >
               {getForm(activeStep)}
             </div>
             {activeStep !== steps.length && (

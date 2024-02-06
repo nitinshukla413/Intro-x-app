@@ -5,6 +5,8 @@ import { IconButton } from "@mui/material";
 import Image from "next/image";
 const SearchBox = ({ hideOnMobile }: { hideOnMobile?: boolean }) => (
   <div
+  data-aos="fade-right"
+  data-aos-duration="300"
     className={`${
       hideOnMobile ? "max-md:hidden" : ""
     } bg-white w-1/2 max-md:w-full max-md:mx-5 focus:outline-1 rounded-lg shadow-lg flex justify-between items-center`}

@@ -24,6 +24,8 @@ const ProductCard = ({
 }) => {
   return (
     <div
+    data-aos="fade-up"
+    data-aos-duration="1000"
       className={`${
         mobileView ? "flex-col mb-10 ml-10 justify-center items-center mt-10" : ""
       } cursor-pointer max-md:flex-col hover:scale-105 flex delay-3000  border-[#c3c3c4] rounded-xl  bg-[#F5F5F5] `}
