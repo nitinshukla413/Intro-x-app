@@ -23,7 +23,6 @@ const TabNavigator = ({
         role="navigation"
         className="w-full flex  justify-start border-b-2 "
         TabIndicatorProps={{
-           sx: { display: 'none' } ,
           style: { background: "#0444BB", height: "4px", color: "red" },
         }}
         sx={{

@@ -34,7 +34,7 @@ export const getInputText = ({
   // Define inner functional components
   const TextComponent = (props: any) => (
     <div className="flex flex-col w-full">
-      <label className="text-lg text-[#777777] font-[500]">{label}</label>
+      <label className="text-lg text-[#777777] font-[500] max-md:text-md">{label}</label>
       <TextField
         {...props}
         id="standard-basic"

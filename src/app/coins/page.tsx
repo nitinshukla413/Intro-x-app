@@ -23,7 +23,7 @@ const Coins = () => {
       <h1 className="text-3xl font-semibold">
         Choose your <span className="text-[#0441BE]">Plan</span>
       </h1>
-      <div className="w-[50%] shadow-[2px_10px_32px_-15px_rgba(0,0,0,0.6)] p-5 mt-5 rounded-xl">
+      <div className="w-[50%] max-md:w-full max-md:mx-5 max-lg:w-full shadow-[2px_10px_32px_-15px_rgba(0,0,0,0.6)] p-5 mt-5 rounded-xl">
         <table className="w-full">
           <th className="flex w-full justify-evenly p-5">
             <tr className="text-lg wider">No. of Credits</tr>
