@@ -22,8 +22,8 @@ export default function Home() {
     <div className="flex flex-col justify-start items-center">
       <BannerSection />
       <div
-        data-aos="fade-left"
-        data-aos-duration="300"
+      data-aos="fade-left"
+      data-aos-duration="300"
         className="relative -top-10 w-full"
       >
         <TypesSection />
@@ -61,17 +61,16 @@ export const LocationSection = () => {
   return (
     <div className="flex flex-col">
       <h3
-        data-aos="fade-right"
-        data-aos-duration="1000"
-        className="text-3xl max-md:text-2xl text-black font-[500] mb-10 max-md:mb-5"
-      >
+         data-aos="fade-right"
+         data-aos-duration="1000"
+         className="text-3xl max-md:text-2xl text-black font-[500] mb-10 max-md:mb-5">
         Products By Top <span className="text-[#0344B6]">Cities</span>
       </h3>
       <div className="flex flex-wrap justify-center items-center">
         {images?.map((elem, i) => (
           <Image
-            data-aos={i % 2 == 0 ? "fade-up" : "fade-left"}
-            data-aos-duration="1000"
+          data-aos={i%2==0?'fade-up':"fade-left"}
+          data-aos-duration="1000"
             src={elem.img}
             className={`hover:scale-105 h-[25vh] max-lg:h-[20vh] object-fill delay-3000 cursor-pointer w-[${elem.w}] max-lg:w-[30%] max-md:w-[100%] max-md:mr-0 max-md:mb-5 mr-10 mb-10`}
             alt={"city"}
@@ -124,11 +123,8 @@ export const SectionFeature = () => {
     <div className="max-md:py-5 max-md:px-10 max-md:my-10 py-10 my-20 mt-10 px-40  bg-[#080229]  w-full">
       <div className=" flex justify-evenly max-md:space-y-5  items-center max-md:flex-col">
         {features.map((elem) => (
-          <div
-            data-aos="fade-up"
-            data-aos-duration="300"
-            className="flex flex-col justify-center items-center"
-          >
+          <div  data-aos="fade-up"
+          data-aos-duration="300" className="flex flex-col justify-center items-center">
             <Image
               src={elem.img}
               className="max-md:h-10 max-md:w-10 max-lg:w-10 max-lg:h-10"

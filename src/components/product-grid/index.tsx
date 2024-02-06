@@ -27,7 +27,7 @@ const ProductGrid = ({
   return (
     <div
       data-aos="fade-left"
-      data-aos-duration="1000"
+      data-aos-duration="700"
       className="flex flex-col justify-start items-center mb-10"
     >
       <div className="flex max-md:flex-wrap justify-between w-full">
