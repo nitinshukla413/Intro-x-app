@@ -16,7 +16,7 @@ const TopListing = () => {
   return (
     <div className="flex flex-col justify-start items-center">
       <HeaderBand
-        title={`Top Listing ${search?.length > 0 ? search : "near you"}`}
+        title={`Top Listing ${(search && search?.length > 0) ? search : "near you"}`}
       />
       <div className="p-5">
         {[...Array(numRows)].map((_, rowIndex) => (
