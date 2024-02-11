@@ -1,7 +1,7 @@
 "use client";
 import HeaderBand from "@/components/header-band";
 import ProductCard from "@/components/produce-card";
-import { usePathname, useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 import React from "react";
 
 const TopListing = () => {
@@ -10,13 +10,17 @@ const TopListing = () => {
 
   // Calculate the number of rows needed
   const numRows = Math.ceil(numberOfCards / 2);
-  const searchParams = useSearchParams();
-  const search = searchParams.get("id");
-
+  // const searchParams = useSearchParams();
+  // const search = searchParams.get("id");
+  // ${
+  //   search && search?.length > 0 ? search : "near you"
+  // }
   return (
     <div className="flex flex-col justify-start items-center">
       <HeaderBand
-        title={`Top Listing ${search?.length > 0 ? search : "near you"}`}
+        title={`Top Listing 
+        
+        `}
       />
       <div className="p-5">
         {[...Array(numRows)].map((_, rowIndex) => (
