@@ -88,7 +88,7 @@ export const links = {
         metaData: companyName + '| Coins'
     },
 }
-export const mainMenu = [links[pages.home]]
+export const mainMenu = [links[pages.home], { ...links[pages["bussiness-profile"]], title: 'Become a seller' }]
 export const selectMenu = [links[pages.dasboard], links[pages.profile], links[pages["bussiness-profile"]], links[pages["add-product"]], links[pages.leads], links[pages.enquries]]
 export const quickLinks = [links[pages.myAccount], links[pages.faq], links[pages.myAccount], links[pages.faq], links[pages.myAccount]]
 export const information = [links[pages.aboutUs], links[pages.privacyPolicy], links[pages.TermsAndConditions], links[pages.contactUs]]
