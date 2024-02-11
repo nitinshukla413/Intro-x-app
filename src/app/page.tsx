@@ -6,6 +6,7 @@ import LocationSection from "@/components/locationSection";
 import { TypesSection } from "@/components/typeSection";
 import SectionFeature from "@/components/sectionFeature";
 import { useRouter } from "next/navigation";
+import CustomSlider1 from "@/components/slider/components/CustomSlider";
 export default function Home() {
   const router = useRouter();
   return (
@@ -22,6 +23,17 @@ export default function Home() {
       </div>
       <SectionFeature />
       <Wrapper>
+        <CustomSlider1
+        slideToShow={1}
+          components={[
+            <div className="h-[20vh] w-full bg-black"></div>,
+            <div className="h-[20vh] w-[100vw] bg-[#cece]"></div>,
+            <div className="h-[20vh]  w-[100vw] bg-[#cece]"></div>,
+            <div className="h-[20vh] w-[100vw] bg-[#cece]"></div>,
+            <div className="h-[20vh]  w-[100vw] bg-[#cece]"></div>,
+          ]}
+        />
+
         <ProductGrid
           title={"Top"}
           handleClose={() => {
@@ -38,8 +50,8 @@ export default function Home() {
           highlightTitle="Products"
         />
         <ProductGrid
-        showTabs
-          handleClose={(Categories?:string) => {
+          showTabs
+          handleClose={(Categories?: string) => {
             router.push(`/top-listing?id=${Categories}`);
           }}
           title={"Browse Our Top"}
