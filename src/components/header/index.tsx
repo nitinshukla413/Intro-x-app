@@ -31,7 +31,7 @@ const AppBar = () => {
         className={`flex justify-between px-10 py-4 max-md:px-5 items-center bg-[#F5F5F5]`}
       >
         <Drawer
-          title={"Sahil Jain"}
+          title={"User Name"}
           openDrawer={openDrawer}
           toggleDrawer={toggleDrawer}
         />

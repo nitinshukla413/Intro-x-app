@@ -1,7 +1,4 @@
-import {
-  IconButton,
-  SwipeableDrawer,
-} from "@mui/material";
+import { IconButton, SwipeableDrawer } from "@mui/material";
 import Image from "next/image";
 import Logo from "../../../public/assets/images/introapp-dark.svg";
 import PrimaryBtn from "../buttons/primary";
@@ -12,6 +9,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { mainMenu, selectMenu } from "@/utils/constants";
 import Avt from "../../../public/assets/images/Avatar.png";
+import { useState } from "react";
 const Drawer = ({
   openDrawer,
   toggleDrawer,
@@ -23,20 +21,22 @@ const Drawer = ({
 }) => {
   const router = useRouter();
   const pathName = usePathname();
+  const [idState, setIdState] = useState(0);
   const getTabContent = (id: number) => {
+    setIdState(id);
     switch (id) {
       case 0:
         return (
           <div className="flex flex-col w-full justify-start item-center">
             {mainMenu.map((elem, i) => (
               <Link
-                href="/"
+                href={elem.link}
                 key={i}
                 className={`p-4 text-left border-b-2 pl-5 cursor-pointer hover:bg-[#dedede4e] ${
                   elem?.link === pathName ? "bg-[#dedede4e] " : ""
                 }`}
               >
-                Home
+                {elem.title}
               </Link>
             ))}
           </div>
@@ -93,14 +93,11 @@ const Drawer = ({
           </div>
           <h3 className="text-xl font-bold wider py-5">{title}</h3>
           <PrimaryBtn
-            title={"Add a Product"}
+            title={idState == 1 ? "ADD PRODUCTS" : "SUBMIT AN ENQUIRY"}
             handleClick={() => {
-              router.push("/add-product");
+              router.push(idState == 1 ? "/add-product" : "/");
               toggleDrawer();
             }}
-            tailingIcon={
-              <Image src={plus} className="h-8 w-8 -mb-[5px] -mr-1" alt="" />
-            }
           />
         </div>
         <div className="flex flex-col justify-center items-center w-full">
