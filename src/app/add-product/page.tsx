@@ -73,7 +73,7 @@ const AddProduct = () => {
         return (
           <div className="flex flex-col justify-center items-center w-full h-full">
             <Image src={img} alt="" className="h-30 w-30" />
-            <h3 className="text-[50px] max-md:text-xl font-bold text-[#0044BB]">
+            <h3 className="text-[50px] max-md:text-xl font-bold text-[#003034]">
               Product submitted
             </h3>
             <p className="text-md text-[#999999] py-5">
@@ -103,7 +103,7 @@ const AddProduct = () => {
                 sx={{
                   backgroundColor: "#D9D9D9",
                   "& .MuiLinearProgress-bar": {
-                    backgroundColor: "#0044BB",
+                    backgroundColor: "#003034",
                   },
                 }}
                 variant="determinate"
@@ -113,7 +113,7 @@ const AddProduct = () => {
               />
             </div>
             <h2 className="text-xl max-md:text-lg text-black wider uppercase font-[600]">
-              Product <span className="text-[#0044BB]"> information</span>
+              Product <span className="text-[#003034]"> information</span>
             </h2>
             <div className="w-full p-8 my-5 max-md:pt-5 px-10   flex justify-start items-start rounded-xl border-2 border-[#DDDDDD] bg-[#FAFAFA]">
               {getForm(activeStep)}

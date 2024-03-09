@@ -24,7 +24,7 @@ const LocationSection = () => {
         data-aos-duration="1000"
         className="text-3xl max-md:text-2xl text-black font-[500] mb-10 max-md:mb-5"
       >
-        Products By Top <span className="text-[#0344B6]">Cities</span>
+        Products By Top <span className="text-[#0A6269] font-bold">Cities</span>
       </h3>
       <div className="flex flex-wrap justify-center items-center">
         {images?.map((elem, i) => (

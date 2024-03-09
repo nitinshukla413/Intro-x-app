@@ -23,7 +23,7 @@ const TabNavigator = ({
         role="navigation"
         className="w-full flex  justify-start border-b-2 "
         TabIndicatorProps={{
-          style: { background: "#0444BB", height: "4px", color: "red" },
+          style: { background: "#0A6269", height: "4px", color: "red" },
         }}
         sx={{
           '& .MuiTabs-flexContainer': {
@@ -37,7 +37,7 @@ const TabNavigator = ({
             style={{
               ...(value == i
                 ? {
-                    color: "#0444BB",
+                    color: "#0A6269",
                     backgroundColor: "rgb(192,192,192,0.15)",
                   }
                 : ""),

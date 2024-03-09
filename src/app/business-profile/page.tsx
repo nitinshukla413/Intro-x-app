@@ -109,7 +109,7 @@ const BusinessProfile = () => {
               alt=""
               className="h-30 w-30"
             />
-            <h3 className="text-[50px] max-md:text-xl font-bold text-[#0044BB]">
+            <h3 className="text-[50px] max-md:text-xl font-bold text-[#003034]">
               Thank You
             </h3>
             <p
@@ -150,7 +150,7 @@ const BusinessProfile = () => {
                 sx={{
                   backgroundColor: "#D9D9D9",
                   "& .MuiLinearProgress-bar": {
-                    backgroundColor: "#0044BB",
+                    backgroundColor: "#003034",
                   },
                 }}
                 variant="determinate"
@@ -164,7 +164,7 @@ const BusinessProfile = () => {
               data-aos-duration="1000"
               className="text-xl max-md:text-lg text-black wider uppercase font-[600]"
             >
-              Setup your <span className="text-[#0044BB]"> seller profile</span>
+              Setup your <span className="text-[#003034]"> seller profile</span>
             </h2>
             <h2
               data-aos="fade-left"

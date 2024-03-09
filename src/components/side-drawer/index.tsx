@@ -111,10 +111,10 @@ const Drawer = ({
         </div>
         <h3 className="mt-8">
           All Rights Reserved By{" "}
-          <span className="text-[#0044BB]">Introapp</span>
+          <span className="text-[#003034]">Introapp</span>
         </h3>
         <h3 className="mb-8">
-          Developed By <span className="text-[#0044BB]">Metaminds Studio</span>
+          Developed By <span className="text-[#003034]">Metaminds Studio</span>
         </h3>
         <div className="h-20 bg-black"></div>
       </div>

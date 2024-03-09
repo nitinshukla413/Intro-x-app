@@ -49,14 +49,7 @@ const AppBar = () => {
           >
             <Image src={HamBurger} alt="hm" className="h-5 w-5" />
           </IconButton>
-          <Image
-            onClick={() => {
-              router.push("/");
-            }}
-            src={Logo}
-            className="cursor-pointer ml-3 h-full max-md:ml-0"
-            alt="hm"
-          />
+          <h1 className="font-bold text-[#D4B103] text-2xl">Auction Wale</h1>
         </div>
         <SearchBox hideOnMobile />
         <div
@@ -71,7 +64,7 @@ const AppBar = () => {
             aria-label="search"
             className="bg-white shadow-2xl"
           >
-            <Star style={{ fill: "#0444B6" }} />
+            <Star style={{ fill: "#003034" }} />
           </IconButton>
           <IconButton
             onClick={toggleDrawer}
@@ -80,7 +73,7 @@ const AppBar = () => {
             aria-label="search"
             className="bg-white shadow-2xl"
           >
-            <Email style={{ fill: "#0444B6" }} />
+            <Email style={{ fill: "#003034" }} />
           </IconButton>
           <IconButton
             onClick={toggleDrawer}
@@ -89,7 +82,7 @@ const AppBar = () => {
             aria-label="search"
             className="bg-white shadow-2xl"
           >
-            <Notifications style={{ fill: "#0444B6" }} />
+            <Notifications style={{ fill: "#003034" }} />
           </IconButton>
           <PrimaryBtn
             title={" Become a Seller"}

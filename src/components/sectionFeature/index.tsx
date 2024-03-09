@@ -12,7 +12,7 @@ const  SectionFeature= () => {
       { title: "100% safe", img: safe },
     ];
     return (
-      <div className="max-md:py-5 max-md:px-10 max-md:my-10 py-10 my-20 mt-10 px-40  bg-[#080229]  w-full">
+      <div className="max-md:py-5 max-md:px-10 max-md:my-10 py-10 my-20 mt-10 px-40  bg-primary  w-full">
         <div className=" flex justify-evenly max-md:space-y-5  items-center max-md:flex-col">
           {features.map((elem, i) => (
             <div

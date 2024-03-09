@@ -56,7 +56,7 @@ const ProductGrid = ({
         <h2 className="max-md:text-center text-3xl max-md:text-2xl max-md:mb-5 font-bold wider mb-10">
           {title || "Browse Our Top"}
           {"  "}
-          <span className="text-[#004BE5]">
+          <span className="text-[#0A6269]">
             {highlightTitle || "Categories"}{" "}
           </span>
           {afterhighlight ? afterhighlight : ""}

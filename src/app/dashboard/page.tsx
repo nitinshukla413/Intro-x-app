@@ -95,11 +95,11 @@ const Dashboard = () => {
                 large={true}
               />
              <div className="w-full flex flex-wrap  max-md:justify-center max-md:ml-0 h-full justify-start items-center">
-             <Box title="200" subtitle=" Products List" color={"#0044BB"} />
-              <Box title="50" subtitle="Leads" color={"#0044BB"} />
-              <Box title="30000" subtitle="Profile Views" color={"#0044BB"} />
-              <Box title="500" subtitle="Calls received" color={"#0044BB"} />
-              <Box title="600" subtitle="Messages received" color={"#0044BB"} />
+             <Box title="200" subtitle=" Products List" color={"#003034"} />
+              <Box title="50" subtitle="Leads" color={"#003034"} />
+              <Box title="30000" subtitle="Profile Views" color={"#003034"} />
+              <Box title="500" subtitle="Calls received" color={"#003034"} />
+              <Box title="600" subtitle="Messages received" color={"#003034"} />
             </div>
             </div>
           </div>

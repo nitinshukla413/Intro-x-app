@@ -18,7 +18,7 @@ const PrimaryBtn = ({
       disabled={disable}
       variant="contained"
       onClick={handleClick}
-      className={`bg-[#0044BB] rounded-lg p-3 ${containerStyle}`}
+      className={`bg-primary rounded-lg p-3 ${containerStyle}`}
     >
       {tailingIcon}
       {title}
